@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="preloaded_fonts">preloaded_fonts</string-array>
+    <color name="black">#FF000000</color>
+    <color name="blue">#37ABFF</color>
+    <color name="blueLight">#D1F4FF</color>
+    <color name="dark1">#1F2933</color>
+    <color name="dark2">#242D35</color>
+    <color name="green">#3EBD93</color>
+    <color name="greenDark">#46987F</color>
+    <color name="greenLight">#9BF9D3</color>
+    <color name="grey1">#6B7580</color>
+    <color name="grey2">#9BA1A8</color>
+    <color name="grey3">#B0B8BF</color>
+    <color name="grey4">#DCDFE3</color>
+    <color name="grey5">#EBEEF0</color>
+    <color name="ic_launcher_background">#FDFDFD</color>
+    <color name="primaryBrand">#0E33F3</color>
+    <color name="primaryDark">#57A4F2</color>
+    <color name="primaryLight">#A0CCF8</color>
+    <color name="red">#EF4E4E</color>
+    <color name="redDark">#C62B30</color>
+    <color name="redLight">#FFD7D7</color>
+    <color name="softOrange">#FDE1CE</color>
+    <color name="teal_700">#018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#FBBE4A</color>
+    <color name="yellowLight">#FCE588</color>
+    <string name="app_name">Moneta</string>
+    <string name="cd_app_logo">Logo ứng dụng quản lý chi tiêu</string>
+    <string name="desc1">Ghi chép chi tiêu mỗi ngày để giúp bạn quản lý tài chính tốt hơn.</string>
+    <string name="desc2">Nhận thông báo ngay khi bạn chi tiêu vượt quá hạn mức đã đặt ra.</string>
+    <string name="desc3">Theo dõi, ghi chép và phân tích chi tiêu mỗi ngày để bạn luôn kiểm soát tài chính một cách thông minh và hiệu quả.</string>
+    <string name="title1">Ghi chép chi tiêu</string>
+    <string name="title2">Quản lý tài chính đơn giản</string>
+    <string name="title3">Tài chính trong tầm tay bạn</string>
+    <style name="Base.Theme.ExpenseManagement" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="colorPrimary">@color/primaryBrand</item>
+        <item name="colorPrimaryContainer">@color/primaryDark</item>
+        <item name="colorOnPrimary">@color/primaryBrand</item>
+
+        <item name="colorSecondaryContainer">@color/primaryLight</item>
+        <item name="colorSurfaceVariant">@color/primaryDark</item>
+    </style>
+    <style name="Theme.ExpenseManagement" parent="Base.Theme.ExpenseManagement"/>
+</resources>

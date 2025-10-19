@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/sliderImage"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/slider1"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/sliderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp"
+        android:fontFamily="@font/inter_28pt_bold"
+        android:text="@string/title1"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/sliderDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/inter_18pt_light"
+        android:text="@string/desc1"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:maxWidth="250dp"
+        android:ellipsize="none"
+        android:singleLine="false"
+        android:scrollHorizontally="false"
+        android:layout_gravity="center_horizontal"/>
+</LinearLayout>

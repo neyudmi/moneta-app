@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Moneta</string>
+    <string name="cd_app_logo">Logo ứng dụng quản lý chi tiêu</string>
+    <string name="title1">Ghi chép chi tiêu</string>
+    <string name="title2">Quản lý tài chính đơn giản</string>
+    <string name="title3">Tài chính trong tầm tay bạn</string>
+    <string name="desc1">Ghi chép chi tiêu mỗi ngày để giúp bạn quản lý tài chính tốt hơn.</string>
+    <string name="desc2">Nhận thông báo ngay khi bạn chi tiêu vượt quá hạn mức đã đặt ra.</string>
+    <string name="desc3">Theo dõi, ghi chép và phân tích chi tiêu mỗi ngày để bạn luôn kiểm soát tài chính một cách thông minh và hiệu quả.</string>
+
+</resources>
