@@ -42,7 +42,6 @@ drawable logo
 drawable slider1
 drawable slider2
 drawable slider3
-drawable telephone
 font inter_18pt_black
 font inter_18pt_blackitalic
 font inter_18pt_bold

@@ -3143,7 +3143,6 @@ drawable notify_panel_notification_icon_bg
 drawable slider1
 drawable slider2
 drawable slider3
-drawable telephone
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
