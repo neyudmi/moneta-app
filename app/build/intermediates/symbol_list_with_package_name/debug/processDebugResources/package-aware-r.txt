@@ -3061,6 +3061,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_otp
 drawable ic_phone
 drawable ic_profile
 drawable ic_search_black_24
@@ -3302,7 +3303,10 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnContinue
+id btnContinueOTP
 id btnLogin
+id btnReset
 id btnSignup
 id btnforgotPassWord
 id buttonPanel
@@ -3383,8 +3387,12 @@ id east
 id edge
 id editTextConfirm_Password
 id editTextEmail
+id editTextEmailForgot
 id editTextName
+id editTextOTP
 id editTextPassword
+id editTextPasswordNew
+id editTextPasswordNewCf
 id edit_query
 id edit_text_id
 id elastic
@@ -3411,6 +3419,7 @@ id fixed
 id flip
 id floating
 id forever
+id forgotloginHere
 id fragment_container_view_tag
 id frost
 id fullscreen_header
@@ -3584,6 +3593,7 @@ id rectangles
 id registerHere
 id registerToLogin
 id report_drawn
+id resetloginHere
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3707,6 +3717,8 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvResendOtp
+id tvSubtitle
 id unchecked
 id uniform
 id unlabeled
@@ -3846,6 +3858,9 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_forgot_password
+layout activity_forgot_password_otp
+layout activity_forgot_password_reset
 layout activity_get_started
 layout activity_navigation
 layout custom_dialog

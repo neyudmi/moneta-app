@@ -26,7 +26,7 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     private TextInputEditText editTextEmail, editTextPassword;
-    private MaterialButton btnLogin;
+    private MaterialButton btnLogin, btnForgot;
     private RequestQueue requestQueue;
     private String baseUrl;
     private SharedPreferences prefs;
@@ -59,6 +59,16 @@ public class MainActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editTextPassword);
         requestQueue = Volley.newRequestQueue(this);
         btnLogin = findViewById(R.id.btnLogin);
+        btnForgot = findViewById(R.id.btnforgotPassWord);
+
+        btnForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ForgotPassword.class);
+                startActivity(intent);
+
+            }
+        });
         //btnLogin.setOnClickListener(v -> signInUser() );
 
     }

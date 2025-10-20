@@ -3060,6 +3060,7 @@ int drawable ic_mtrl_checked_circle 0x7f08009a
 int drawable ic_mtrl_chip_checked_black 0x7f08009b
 int drawable ic_mtrl_chip_checked_circle 0x7f08009c
 int drawable ic_mtrl_chip_close_circle 0x7f08009d
+int drawable ic_otp 0x7f0800f3
 int drawable ic_phone 0x7f08009e
 int drawable ic_profile 0x7f08009f
 int drawable ic_search_black_24 0x7f0800a0
@@ -3301,7 +3302,10 @@ int id bounce 0x7f0a0062
 int id bounceBoth 0x7f0a0063
 int id bounceEnd 0x7f0a0064
 int id bounceStart 0x7f0a0065
+int id btnContinue 0x7f0a0214
+int id btnContinueOTP 0x7f0a0215
 int id btnLogin 0x7f0a0066
+int id btnReset 0x7f0a0216
 int id btnSignup 0x7f0a0067
 int id btnforgotPassWord 0x7f0a0068
 int id buttonPanel 0x7f0a0069
@@ -3382,8 +3386,12 @@ int id east 0x7f0a00b3
 int id edge 0x7f0a00b4
 int id editTextConfirm_Password 0x7f0a00b5
 int id editTextEmail 0x7f0a00b6
+int id editTextEmailForgot 0x7f0a0217
 int id editTextName 0x7f0a00b7
+int id editTextOTP 0x7f0a0218
 int id editTextPassword 0x7f0a00b8
+int id editTextPasswordNew 0x7f0a0219
+int id editTextPasswordNewCf 0x7f0a021a
 int id edit_query 0x7f0a00b9
 int id edit_text_id 0x7f0a00ba
 int id elastic 0x7f0a00bb
@@ -3410,6 +3418,7 @@ int id fixed 0x7f0a00cf
 int id flip 0x7f0a00d0
 int id floating 0x7f0a00d1
 int id forever 0x7f0a00d2
+int id forgotloginHere 0x7f0a021b
 int id fragment_container_view_tag 0x7f0a00d3
 int id frost 0x7f0a00d4
 int id fullscreen_header 0x7f0a00d5
@@ -3583,6 +3592,7 @@ int id rectangles 0x7f0a017c
 int id registerHere 0x7f0a017d
 int id registerToLogin 0x7f0a017e
 int id report_drawn 0x7f0a017f
+int id resetloginHere 0x7f0a021c
 int id reverseSawtooth 0x7f0a0180
 int id right 0x7f0a0181
 int id rightToLeft 0x7f0a0182
@@ -3706,6 +3716,8 @@ int id transition_position 0x7f0a01f7
 int id transition_scene_layoutid_cache 0x7f0a01f8
 int id transition_transform 0x7f0a01f9
 int id triangle 0x7f0a01fa
+int id tvResendOtp 0x7f0a021d
+int id tvSubtitle 0x7f0a021e
 int id unchecked 0x7f0a01fb
 int id uniform 0x7f0a01fc
 int id unlabeled 0x7f0a01fd
@@ -3845,6 +3857,9 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0d0018
 int layout abc_search_view 0x7f0d0019
 int layout abc_select_dialog_material 0x7f0d001a
 int layout abc_tooltip 0x7f0d001b
+int layout activity_forgot_password 0x7f0d0070
+int layout activity_forgot_password_otp 0x7f0d0071
+int layout activity_forgot_password_reset 0x7f0d0072
 int layout activity_get_started 0x7f0d001c
 int layout activity_navigation 0x7f0d001d
 int layout custom_dialog 0x7f0d001e
