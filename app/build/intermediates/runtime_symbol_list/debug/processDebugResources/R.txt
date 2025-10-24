@@ -42,6 +42,7 @@ int anim m3_side_sheet_exit_to_right 0x7f010028
 int anim mtrl_bottom_sheet_slide_in 0x7f010029
 int anim mtrl_bottom_sheet_slide_out 0x7f01002a
 int anim mtrl_card_lowers_interpolator 0x7f01002b
+int anim slide_down 0x7f01002c
 int animator design_appbar_state_list_animator 0x7f020000
 int animator design_fab_hide_motion_spec 0x7f020001
 int animator design_fab_show_motion_spec 0x7f020002
@@ -3026,6 +3027,7 @@ int drawable abc_vector_test 0x7f080077
 int drawable avd_hide_password 0x7f080078
 int drawable avd_show_password 0x7f080079
 int drawable bg_gradient 0x7f0800f4
+int drawable bg_toast_success 0x7f080102
 int drawable btn_checkbox_checked_mtrl 0x7f08007a
 int drawable btn_checkbox_checked_to_unchecked_mtrl_animation 0x7f08007b
 int drawable btn_checkbox_unchecked_mtrl 0x7f08007c
@@ -3051,6 +3053,7 @@ int drawable ic_call_answer_video 0x7f08008a
 int drawable ic_call_answer_video_low 0x7f08008b
 int drawable ic_call_decline 0x7f08008c
 int drawable ic_call_decline_low 0x7f08008d
+int drawable ic_check 0x7f080103
 int drawable ic_checklist 0x7f0800fa
 int drawable ic_clear_black_24 0x7f08008e
 int drawable ic_clock_black_24dp 0x7f08008f
@@ -3484,6 +3487,12 @@ int id jumpToEnd 0x7f0a00f6
 int id jumpToStart 0x7f0a00f7
 int id labeled 0x7f0a00f8
 int id layout 0x7f0a00f9
+int id layoutConfirmPassword 0x7f0a0236
+int id layoutDob 0x7f0a0237
+int id layoutEmail 0x7f0a0238
+int id layoutGender 0x7f0a0239
+int id layoutName 0x7f0a023a
+int id layoutPassword 0x7f0a023b
 int id left 0x7f0a00fa
 int id leftToRight 0x7f0a00fb
 int id legacy 0x7f0a00fc
@@ -3736,6 +3745,9 @@ int id time 0x7f0a01e8
 int id title 0x7f0a01e9
 int id titleDividerNoCustom 0x7f0a01ea
 int id title_template 0x7f0a01eb
+int id toastIcon 0x7f0a023d
+int id toastMessage 0x7f0a023e
+int id toastRoot 0x7f0a023f
 int id toggle 0x7f0a01ec
 int id top 0x7f0a01ed
 int id topPanel 0x7f0a01ee
@@ -3985,6 +3997,7 @@ int layout select_dialog_multichoice_material 0x7f0d006c
 int layout select_dialog_singlechoice_material 0x7f0d006d
 int layout slider_screen 0x7f0d006e
 int layout support_simple_spinner_dropdown_item 0x7f0d006f
+int layout toast 0x7f0d0076
 int menu navigation 0x7f140000
 int mipmap ic_launcher 0x7f0f0000
 int mipmap ic_launcher_foreground 0x7f0f0001

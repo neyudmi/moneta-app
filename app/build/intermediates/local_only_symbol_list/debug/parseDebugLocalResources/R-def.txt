@@ -1,5 +1,6 @@
 R_DEF: Internal format may change without notice
 local
+anim slide_down
 array preloaded_fonts
 color black
 color blue
@@ -30,11 +31,13 @@ color white
 color yellow
 color yellowLight
 drawable bg_gradient
+drawable bg_toast_success
 drawable corner
 drawable ic_add
 drawable ic_ai
 drawable ic_analytics
 drawable ic_bell
+drawable ic_check
 drawable ic_checklist
 drawable ic_detail
 drawable ic_dob
@@ -144,6 +147,12 @@ id fragment_container
 id genderDropdown
 id genderLayout
 id ivProfile
+id layoutConfirmPassword
+id layoutDob
+id layoutEmail
+id layoutGender
+id layoutName
+id layoutPassword
 id loginHere
 id loginToRegister
 id logo_vertic
@@ -167,6 +176,9 @@ id startbtn
 id sumSpend
 id tabGroup
 id tabLayout
+id toastIcon
+id toastMessage
+id toastRoot
 id transactionList
 id tvOverview
 id tvProfile
@@ -183,6 +195,7 @@ layout navigation
 layout profile
 layout register
 layout slider_screen
+layout toast
 menu navigation
 mipmap ic_launcher
 mipmap ic_launcher_foreground
