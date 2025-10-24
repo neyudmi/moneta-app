@@ -1,0 +1,244 @@
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        >
+
+        <TextView
+            android:id="@+id/tvOverview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="16dp"
+            android:text="Trang chủ"
+            android:fontFamily="@font/inter_24pt_bold"
+            android:textSize="18sp"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:elevation="4dp"
+            />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_profile"
+            android:layout_marginEnd="24dp"
+            android:elevation="4dp"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+            app:layout_constraintTop_toTopOf="@+id/tvOverview"
+            app:layout_constraintBottom_toBottomOf="@+id/tvOverview"
+            app:layout_constraintEnd_toEndOf="@+id/tvOverview" />
+
+
+        <LinearLayout
+            android:id="@+id/cardGroup"
+            app:layout_constraintTop_toBottomOf="@id/tvOverview"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardExpense"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="140dp"
+                app:cardElevation="1dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="20dp">
+
+                <!-- Inner layout with gradient background -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_gradient"
+                    android:padding="20dp">
+                    <ImageView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/ic_wallet"
+                        app:tint="@color/white"
+                        app:itemIconSize="50dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tổng chi tiêu tháng"
+                        android:fontFamily="@font/inter_18pt_regular"
+                        android:textSize="16sp"
+                        android:textColor="#FFFFFF" />
+                    <TextView
+                        android:id="@+id/sumSpend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="4.000.000 VNĐ"
+                        android:fontFamily="@font/inter_18pt_semibold"
+                        android:textSize="18sp"
+                        android:textColor="#FFFFFF" /> <!-- White text for contrast -->
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardTarget"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="12dp"
+                android:layout_weight="2"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="20dp"
+                app:strokeWidth="0dp">
+
+                <!-- Inner layout with gradient background -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/grey5"
+                    android:padding="20dp">
+                    <ImageView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/ic_topic"
+                        app:tint="@color/black" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quản lý"
+                        android:fontFamily="@font/inter_18pt_regular"
+                        android:textSize="16sp"
+                        android:textColor="@color/black" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Danh Mục"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/inter_24pt_semibold"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/cardGroup"
+            android:padding="24dp"
+            android:background="@drawable/corner">
+
+            <LinearLayout
+                android:id="@+id/tabGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:weightSum="3">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/analyticBtn"
+                    style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    android:minWidth="0dp"
+                    android:paddingHorizontal="8dp"
+                    android:text="Phân tích"
+                    android:textAllCaps="false"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/inter_18pt_medium"
+                    android:textColor="@color/black"
+                    app:icon="@drawable/ic_analytics"
+                    app:iconSize="16dp"
+                    app:iconTint="@color/black"
+                    app:iconGravity="textStart"
+                    app:iconPadding="4dp"
+                    android:backgroundTint="@color/white" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/plotBtn"
+                    style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="6dp"
+                    android:minWidth="0dp"
+                    android:paddingHorizontal="8dp"
+                    android:text="Chi tiết"
+                    android:textAllCaps="false"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/inter_18pt_medium"
+                    android:textColor="@color/black"
+                    app:icon="@drawable/ic_detail"
+                    app:iconSize="16dp"
+                    app:iconTint="@color/black"
+                    app:iconGravity="textStart"
+                    app:iconPadding="4dp"
+                    android:backgroundTint="@color/white" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/remindBtn"
+                    style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    android:minWidth="0dp"
+                    android:paddingHorizontal="8dp"
+                    android:text="Nhắc nhở"
+                    android:textAllCaps="false"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/inter_18pt_medium"
+                    android:textColor="@color/black"
+                    app:icon="@drawable/ic_bell"
+                    app:iconSize="16dp"
+                    app:iconTint="@color/black"
+                    app:iconGravity="textStart"
+                    app:iconPadding="4dp"
+                    android:backgroundTint="@color/white" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mới Nhất"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/inter_18pt_semibold"
+                android:textColor="@color/black"
+                android:layout_marginTop="24dp"/>
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/transactionList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/grey5"
+            app:layout_constraintTop_toBottomOf="@id/tabLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingHorizontal="24dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

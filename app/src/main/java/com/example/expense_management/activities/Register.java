@@ -52,9 +52,34 @@ public class Register extends AppCompatActivity {
         editTextConfirmPassword = findViewById(R.id.editTextConfirm_Password);
         btnRegister = findViewById(R.id.btnSignup);
         MaterialTextView loginHere = findViewById(R.id.loginHere);
+        genderDropdown = findViewById(R.id.genderDropdown);
+        dateOfBirthInput = findViewById(R.id.dateOfBirthInput);
+
+
 
         // Khởi tạo Volley queue
         requestQueue = Volley.newRequestQueue(this);
+
+//        // Dropdown giới tính
+        String[] genders = new String[]{"Nam", "Nữ"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, genders);
+        genderDropdown.setAdapter(adapter);
+
+        // Date picker
+        MaterialDatePicker<Long> datePicker = MaterialDatePicker.Builder.datePicker()
+                .setTitleText("Chọn ngày sinh")
+                .setCalendarConstraints(new CalendarConstraints.Builder()
+                        .setEnd(MaterialDatePicker.todayInUtcMilliseconds())
+                        .build())
+                .build();
+
+        dateOfBirthInput.setOnClickListener(v -> datePicker.show(getSupportFragmentManager(), "DATE_PICKER"));
+
+        datePicker.addOnPositiveButtonClickListener(selection -> {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+            String selectedDate = sdf.format(new Date(selection));
+            dateOfBirthInput.setText(selectedDate);
+        });
 
         // Bắt sự kiện nút Đăng ký
         //btnRegister.setOnClickListener(v -> signupUser());

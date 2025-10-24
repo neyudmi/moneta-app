@@ -26,7 +26,7 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     private TextInputEditText editTextEmail, editTextPassword;
-    private MaterialButton btnLogin;
+    private MaterialButton btnLogin, btnForgot;
     private RequestQueue requestQueue;
     private String baseUrl;
     private SharedPreferences prefs;
@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
         String refreshToken = prefs.getString("refresh_token", null);
         requestQueue = Volley.newRequestQueue(this);
 
-//        if (accessToken != null && refreshToken != null) {
-//            getInfo(accessToken, refreshToken);
-//        }
+        if (accessToken != null && refreshToken != null) {
+            getInfo(accessToken, refreshToken);
+        }
 
         registerHere.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,186 +59,220 @@ public class MainActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editTextPassword);
         requestQueue = Volley.newRequestQueue(this);
         btnLogin = findViewById(R.id.btnLogin);
+        btnForgot = findViewById(R.id.btnforgotPassWord);
+
+        btnForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ForgotPassword.class);
+                startActivity(intent);
+
+            }
+        });
         //btnLogin.setOnClickListener(v -> signInUser() );
 
+        btnLogin.setOnClickListener(v -> {
+            String email = editTextEmail.getText().toString().trim();
+            String password = editTextPassword.getText().toString().trim();
+
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
+            } else {
+                // 🔹 Giả lập đăng nhập thành công
+                Toast.makeText(this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
+
+                // Lưu tạm dữ liệu giả lập vào SharedPreferences (nếu cần)
+                SharedPreferences prefs = getSharedPreferences("UserStore", MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("fullName", "Người dùng thử nghiệm");
+                editor.putString("email", email);
+                editor.apply();
+
+                // 🔹 Chuyển sang màn hình chính
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
+    }
+
+    private void signInUser() {
+        String email = editTextEmail.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
+
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Vui lòng điền đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        JSONObject requestBody = new JSONObject();
+        try {
+            requestBody.put("email", email);
+            requestBody.put("password", password);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        String url = baseUrl + "/auth/login";
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.POST,
+                url,
+                requestBody,
+                response -> {
+                    try {
+                        prefs = getSharedPreferences("TokenStore", MODE_PRIVATE);
+                        String accessToken = response.getString("accessToken");
+                        String refreshToken = response.getString("refreshToken");
+                        SharedPreferences.Editor editor = prefs.edit();
+                        editor.putString("access_token", accessToken);
+                        editor.putString("refresh_token", refreshToken);
+                        editor.apply();
+                        Toast.makeText(this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
+                        getUserInfoAndNavigate(accessToken);
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+                },
+                error -> {
+                    Toast.makeText(this, "Lỗi khi đăng nhập: " + error.toString(), Toast.LENGTH_LONG).show();
+                    Log.e("LoginError", "Lỗi khi đăng nhập", error);
+                }
+        );
+
+        requestQueue.add(jsonObjectRequest);
+    }
+
+    private void getUserInfoAndNavigate(String accessToken) {
+        String url = baseUrl + "/users/me";
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.GET,
+                url,
+                null,
+                response -> {
+                    try {
+                        String fullName = response.getString("fullName");
+                        String email = response.getString("email");
+                        String dob = response.getString("birthDay");
+                        String gender = response.getString("gender");
+                        String id = response.getString("id");
+
+                        SharedPreferences sharedPreferences = getSharedPreferences("UserStore", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("fullName", fullName);
+                        editor.putString("email", email);
+                        editor.putString("birthDay", dob);
+                        editor.putString("gender", gender);
+                        editor.putString("id", id);
+                        editor.apply();
+
+                        // Now that we have saved the user info, navigate to the main app
+                        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                        startActivity(intent);
+                        finish();
+                    } catch (JSONException e) {
+                        Toast.makeText(this, "Lỗi khi xử lý thông tin người dùng", Toast.LENGTH_SHORT).show();
+                        Log.e("UserInfoError", "Lỗi khi xử lý thông tin người dùng", e);
+                    }
+                },
+                error -> {
+                    Toast.makeText(this, "Lỗi khi lấy thông tin người dùng", Toast.LENGTH_SHORT).show();
+                    Log.e("UserInfoError", "Lỗi khi lấy thông tin người dùng", error);
+                }
+        ) {
+            @Override
+            public java.util.Map<String, String> getHeaders() {
+                java.util.Map<String, String> headers = new java.util.HashMap<>();
+                headers.put("Authorization", "Bearer " + accessToken);
+                headers.put("Content-Type", "application/json");
+                return headers;
+            }
+        };
+        requestQueue.add(jsonObjectRequest);
+    }
+
+    private void getInfo(String accessToken, String refreshToken) {
+        String url = baseUrl + "/users/me";
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.GET,
+                url,
+                null,
+                response -> {
+                    try {
+                        String fullName = response.getString("fullName");
+                        String email = response.getString("email");
+                        String dob = response.getString("birthDay");
+                        String gender = response.getString("gender");
+                        String id = response.getString("id");
+
+                        SharedPreferences sharedPreferences = getSharedPreferences("UserStore", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("fullName", fullName);
+                        editor.putString("email", email);
+                        editor.putString("birthDay", dob);
+                        editor.putString("gender", gender);
+                        editor.putString("id", id);
+                        editor.apply();
+
+                        Toast.makeText(this, "Đăng nhập thành công!", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                        startActivity(intent);
+                        finish();
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+                },
+                error -> {
+                    refreshTokens(refreshToken);
+                }
+        ) {
+            @Override
+            public java.util.Map<String, String> getHeaders() {
+                java.util.Map<String, String> headers = new java.util.HashMap<>();
+                headers.put("Authorization", "Bearer " + accessToken);
+                headers.put("Content-Type", "application/json");
+                return headers;
+            }
+        };
+        requestQueue.add(jsonObjectRequest);
+    }
+
+    private void refreshTokens(String refreshToken) {
+        String url = baseUrl + "/refresh";
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.GET,
+                url,
+                null,
+                response -> {
+                    try {
+                        String accessToken = response.getString("accessToken");
+                        String newRefreshToken = response.getString("refreshToken");
+                        SharedPreferences.Editor editor = prefs.edit();
+                        editor.putString("access_token", accessToken);
+                        editor.putString("refresh_token", newRefreshToken);
+                        editor.apply();
+                        getInfo(accessToken, newRefreshToken);
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+                },
+                error -> {
+                    SharedPreferences sharedPreferences = getSharedPreferences("UserStore", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.clear();
+                    editor.apply();
+                }
+        ) {
+            @Override
+            public java.util.Map<String, String> getHeaders() {
+                java.util.Map<String, String> headers = new java.util.HashMap<>();
+                headers.put("Authorization", "Bearer " + refreshToken);
+                headers.put("Content-Type", "application/json");
+                return headers;
+            }
+        };
+        requestQueue.add(jsonObjectRequest);
     }
 }
-
-//    private void signInUser() {
-//        String email = editTextEmail.getText().toString().trim();
-//        String password = editTextPassword.getText().toString().trim();
-//
-//        if (email.isEmpty() || password.isEmpty()) {
-//            Toast.makeText(this, "Vui lòng điền đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
-//            return;
-//        }
-//
-//        JSONObject requestBody = new JSONObject();
-//        try {
-//            requestBody.put("email", email);
-//            requestBody.put("password", password);
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//
-//        String url = baseUrl + "/auth/login";
-//
-//        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-//                Request.Method.POST,
-//                url,
-//                requestBody,
-//                response -> {
-//                    try {
-//                        prefs = getSharedPreferences("TokenStore", MODE_PRIVATE);
-//                        String accessToken = response.getString("accessToken");
-//                        String refreshToken = response.getString("refreshToken");
-//                        SharedPreferences.Editor editor = prefs.edit();
-//                        editor.putString("access_token", accessToken);
-//                        editor.putString("refresh_token", refreshToken);
-//                        editor.apply();
-//                        Toast.makeText(this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
-//                        getUserInfoAndNavigate(accessToken);
-//                    } catch (JSONException e) {
-//                        throw new RuntimeException(e);
-//                    }
-//                },
-//                error -> {
-//                    Toast.makeText(this, "Lỗi khi đăng nhập: " + error.toString(), Toast.LENGTH_LONG).show();
-//                    Log.e("LoginError", "Lỗi khi đăng nhập", error);
-//                }
-//        );
-//
-//        requestQueue.add(jsonObjectRequest);
-//    }
-//
-//    private void getUserInfoAndNavigate(String accessToken) {
-//        String url = baseUrl + "/users/me";
-//        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-//                Request.Method.GET,
-//                url,
-//                null,
-//                response -> {
-//                    try {
-//                        String fullName = response.getString("fullName");
-//                        String email = response.getString("email");
-//                        String dob = response.getString("birthDay");
-//                        String gender = response.getString("gender");
-//                        String id = response.getString("id");
-//
-//                        SharedPreferences sharedPreferences = getSharedPreferences("UserStore", MODE_PRIVATE);
-//                        SharedPreferences.Editor editor = sharedPreferences.edit();
-//                        editor.putString("fullName", fullName);
-//                        editor.putString("email", email);
-//                        editor.putString("birthDay", dob);
-//                        editor.putString("gender", gender);
-//                        editor.putString("id", id);
-//                        editor.apply();
-//
-//                        // Now that we have saved the user info, navigate to the main app
-//                        Intent intent = new Intent(MainActivity.this, FragmentActivity.class);
-//                        startActivity(intent);
-//                        finish();
-//                    } catch (JSONException e) {
-//                        Toast.makeText(this, "Lỗi khi xử lý thông tin người dùng", Toast.LENGTH_SHORT).show();
-//                        Log.e("UserInfoError", "Lỗi khi xử lý thông tin người dùng", e);
-//                    }
-//                },
-//                error -> {
-//                    Toast.makeText(this, "Lỗi khi lấy thông tin người dùng", Toast.LENGTH_SHORT).show();
-//                    Log.e("UserInfoError", "Lỗi khi lấy thông tin người dùng", error);
-//                }
-//        ) {
-//            @Override
-//            public java.util.Map<String, String> getHeaders() {
-//                java.util.Map<String, String> headers = new java.util.HashMap<>();
-//                headers.put("Authorization", "Bearer " + accessToken);
-//                headers.put("Content-Type", "application/json");
-//                return headers;
-//            }
-//        };
-//        requestQueue.add(jsonObjectRequest);
-//    }
-//
-//    private void getInfo(String accessToken, String refreshToken) {
-//        String url = baseUrl + "/users/me";
-//        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-//                Request.Method.GET,
-//                url,
-//                null,
-//                response -> {
-//                    try {
-//                        String fullName = response.getString("fullName");
-//                        String email = response.getString("email");
-//                        String dob = response.getString("birthDay");
-//                        String gender = response.getString("gender");
-//                        String id = response.getString("id");
-//
-//                        SharedPreferences sharedPreferences = getSharedPreferences("UserStore", MODE_PRIVATE);
-//                        SharedPreferences.Editor editor = sharedPreferences.edit();
-//                        editor.putString("fullName", fullName);
-//                        editor.putString("email", email);
-//                        editor.putString("birthDay", dob);
-//                        editor.putString("gender", gender);
-//                        editor.putString("id", id);
-//                        editor.apply();
-//
-//                        Toast.makeText(this, "Đăng nhập thành công!", Toast.LENGTH_LONG).show();
-//                        Intent intent = new Intent(MainActivity.this, FragmentActivity.class);
-//                        startActivity(intent);
-//                        finish();
-//                    } catch (JSONException e) {
-//                        throw new RuntimeException(e);
-//                    }
-//                },
-//                error -> {
-//                    refreshTokens(refreshToken);
-//                }
-//        ) {
-//            @Override
-//            public java.util.Map<String, String> getHeaders() {
-//                java.util.Map<String, String> headers = new java.util.HashMap<>();
-//                headers.put("Authorization", "Bearer " + accessToken);
-//                headers.put("Content-Type", "application/json");
-//                return headers;
-//            }
-//        };
-//        requestQueue.add(jsonObjectRequest);
-//    }
-//
-//    private void refreshTokens(String refreshToken) {
-//        String url = baseUrl + "/refresh";
-//        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-//                Request.Method.GET,
-//                url,
-//                null,
-//                response -> {
-//                    try {
-//                        String accessToken = response.getString("accessToken");
-//                        String newRefreshToken = response.getString("refreshToken");
-//                        SharedPreferences.Editor editor = prefs.edit();
-//                        editor.putString("access_token", accessToken);
-//                        editor.putString("refresh_token", newRefreshToken);
-//                        editor.apply();
-//                        getInfo(accessToken, newRefreshToken);
-//                    } catch (JSONException e) {
-//                        throw new RuntimeException(e);
-//                    }
-//                },
-//                error -> {
-//                    SharedPreferences sharedPreferences = getSharedPreferences("UserStore", MODE_PRIVATE);
-//                    SharedPreferences.Editor editor = sharedPreferences.edit();
-//                    editor.clear();
-//                    editor.apply();
-//                }
-//        ) {
-//            @Override
-//            public java.util.Map<String, String> getHeaders() {
-//                java.util.Map<String, String> headers = new java.util.HashMap<>();
-//                headers.put("Authorization", "Bearer " + refreshToken);
-//                headers.put("Content-Type", "application/json");
-//                return headers;
-//            }
-//        };
-//        requestQueue.add(jsonObjectRequest);
-//    }
-//}

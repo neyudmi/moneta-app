@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from D:\expense-management-app\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from D:\expense-management-app\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from D:\expense-management-app\app\src\main\AndroidManifest.xml:2:1-43:12
+ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from D:\expense-management-app\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from D:\expense-management-app\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from D:\expense-management-app\app\src\main\AndroidManifest.xml:2:1-52:12
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9c098a4f3063206b82256d8a09ab14de\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\caodu\.gradle\caches\8.10.2\transforms\cfa66db03e2b7b977471a0e81be31acd\transformed\constraintlayout-2.2.1\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\36fa250ca36e7d4d68f287e0cd00e998\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:2:1-7:12
@@ -63,8 +63,8 @@ ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:5:5-67
 	android:name
 		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:7:5-41:19
-INJECTED from D:\expense-management-app\app\src\main\AndroidManifest.xml:7:5-41:19
+ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:7:5-50:19
+INJECTED from D:\expense-management-app\app\src\main\AndroidManifest.xml:7:5-50:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9c098a4f3063206b82256d8a09ab14de\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9c098a4f3063206b82256d8a09ab14de\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\caodu\.gradle\caches\8.10.2\transforms\cfa66db03e2b7b977471a0e81be31acd\transformed\constraintlayout-2.2.1\AndroidManifest.xml:7:5-20
@@ -101,46 +101,70 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ca
 		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:13:9-55
 	android:usesCleartextTraffic
 		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:14:9-44
+activity#com.example.expense_management.activities.HomeActivity
+ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:16:9-18:40
+	android:exported
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:18:13-37
+	android:name
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:17:13-52
+activity#com.example.expense_management.activities.ForgotPasswordReset
+ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:19:9-21:40
+	android:exported
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:20:13-59
+activity#com.example.expense_management.activities.ForgotPasswordOTP
+ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:22:9-24:40
+	android:exported
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:24:13-37
+	android:name
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:23:13-57
+activity#com.example.expense_management.activities.ForgotPassword
+ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:26:13-54
 activity#com.example.expense_management.activities.GetStarted
-ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:16:9-23:20
+ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:28:9-36:20
 	android:exported
-		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:18:13-36
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:30:13-36
 	android:name
-		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:17:13-50
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:29:13-50
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:19:13-22:29
+ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:31:13-35:29
 action#android.intent.action.MAIN
-ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:20:17-69
+ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:32:17-69
 	android:name
-		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:20:25-66
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:32:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:21:17-77
+ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:34:17-77
 	android:name
-		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:21:27-74
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:34:27-74
 activity#com.example.expense_management.activities.Navigation
-ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:24:9-27:20
+ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:37:9-39:40
 	android:exported
-		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:26:13-37
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:39:13-37
 	android:name
-		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:25:13-50
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:38:13-50
 activity#com.example.expense_management.activities.MainActivity
-ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:28:9-31:20
+ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:40:9-42:40
 	android:exported
-		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:30:13-37
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:42:13-37
 	android:name
-		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:29:13-52
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:41:13-52
 activity#com.example.expense_management.activities.Register
-ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:33:9-36:20
+ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:43:9-45:40
 	android:exported
-		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:35:13-37
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:45:13-37
 	android:name
-		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:34:13-48
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:44:13-48
 meta-data#preloaded_fonts
-ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:38:9-40:57
+ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:47:9-49:57
 	android:resource
-		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:40:13-54
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:49:13-54
 	android:name
-		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:39:13-43
+		ADDED from D:\expense-management-app\app\src\main\AndroidManifest.xml:48:13-43
 uses-sdk
 INJECTED from D:\expense-management-app\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\expense-management-app\app\src\main\AndroidManifest.xml

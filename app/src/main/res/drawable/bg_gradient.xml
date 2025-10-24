@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Gradient từ cam đậm sang cam nhạt -->
+    <gradient
+        android:startColor="#F86B3F"
+        android:centerColor="#F87B57"
+        android:endColor="#FF8A50"
+        android:angle="45" />
+
+    <!-- Bo góc nhẹ cho đẹp -->
+    <corners android:radius="12dp" />
+
+    <!-- Tuỳ chọn thêm nếu dùng cho nút -->
+    <padding
+        android:left="8dp"
+        android:top="8dp"
+        android:right="8dp"
+        android:bottom="8dp" />
+
+</shape>
