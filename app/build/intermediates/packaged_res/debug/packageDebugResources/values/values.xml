@@ -15,6 +15,7 @@
     <color name="grey4">#DCDFE3</color>
     <color name="grey5">#EBEEF0</color>
     <color name="ic_launcher_background">#FDFDFD</color>
+    <color name="mainOrange">#FF5722</color>
     <color name="primaryBrand">#0E33F3</color>
     <color name="primaryDark">#57A4F2</color>
     <color name="primaryLight">#A0CCF8</color>

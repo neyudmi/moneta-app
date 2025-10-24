@@ -29,6 +29,9 @@
         android:theme="@style/Theme.ExpenseManagement"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.example.expense_management.activities.HomeActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.expense_management.activities.ForgotPasswordReset"
             android:exported="false" />
         <activity

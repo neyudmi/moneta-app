@@ -4,7 +4,7 @@
 
     <!-- Gradient từ cam đậm sang cam nhạt -->
     <gradient
-        android:startColor="#EF8564"
+        android:startColor="#F86B3F"
         android:centerColor="#F87B57"
         android:endColor="#FF8A50"
         android:angle="45" />

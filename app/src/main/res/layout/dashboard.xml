@@ -7,9 +7,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/grey4"
+        android:background="@color/white"
         android:fitsSystemWindows="true"
-        android:paddingTop="20dp">
+        >
 
         <TextView
             android:id="@+id/tvOverview"
@@ -20,7 +20,7 @@
             android:text="Trang chủ"
             android:fontFamily="@font/inter_24pt_bold"
             android:textSize="18sp"
-            android:background="@color/grey4"
+            android:background="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:elevation="4dp"
@@ -106,7 +106,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@color/white"
+                    android:background="@color/grey5"
                     android:padding="20dp">
                     <ImageView
                         android:layout_height="wrap_content"
