@@ -8,10 +8,13 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -179,7 +182,7 @@ public class Register extends AppCompatActivity {
                 url,
                 requestBody,
                 response -> {
-                    showTopToast("Đăng ký thành công!", true);
+                   showSuccessDialog();
                 },
                 error -> {
                     if (error.networkResponse != null && error.networkResponse.data != null) {
@@ -218,30 +221,46 @@ public class Register extends AppCompatActivity {
         }
     }
 
-    private void showTopToast(String message, boolean isSuccess) {
-        LayoutInflater inflater = getLayoutInflater();
-        View layout = inflater.inflate(R.layout.toast, findViewById(android.R.id.content), false);
+    private void showSuccessDialog() {
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_signup_success, null);
+        builder.setView(dialogView);
 
-        TextView toastText = layout.findViewById(R.id.toastMessage);
-        ImageView toastIcon = layout.findViewById(R.id.toastIcon);
-        LinearLayout toastRoot = layout.findViewById(R.id.toastRoot);
+        android.app.AlertDialog dialog = builder.create();
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        dialog.show();
 
-        toastText.setText(message);
-        if (isSuccess) {
-            toastRoot.setBackgroundResource(R.drawable.bg_toast_success);
-            toastIcon.setImageResource(R.drawable.ic_check);
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+            dialog.getWindow().setDimAmount(0.6f); // Độ mờ nền, 0f = trong suốt, 1f = rất mờ
         }
 
-        // Animation trượt xuống
-        Animation slideDown = AnimationUtils.loadAnimation(this, R.anim.slide_down);
-        layout.startAnimation(slideDown);
 
-        // Tạo Toast tùy chỉnh
-        Toast toast = new Toast(getApplicationContext());
-        toast.setView(layout);
-        toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.TOP | Gravity.FILL_HORIZONTAL, 0, 0);
-        toast.show();
+        dialog.getWindow().setLayout(
+                (int) (getResources().getDisplayMetrics().widthPixels * 0.75),
+                ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+
+
+        WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
+        params.gravity = Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL;
+        params.y = -150; //
+        dialog.getWindow().setAttributes(params);
+
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogSlideAnimation;
+
+        Button btnContinue = dialogView.findViewById(R.id.btnContinue);
+
+        btnContinue.setOnClickListener(v -> {
+            dialog.dismiss();
+            Intent intent = new Intent(Register.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        });
+        dialog.setCanceledOnTouchOutside(true);
     }
+
+
+
 
 }

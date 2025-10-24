@@ -43,7 +43,7 @@ anim m3_side_sheet_exit_to_right
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
-anim slide_down
+anim slide_up
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -3058,6 +3058,7 @@ drawable ic_check
 drawable ic_checklist
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_close
 drawable ic_detail
 drawable ic_dob
 drawable ic_edit
@@ -3746,9 +3747,6 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
-id toastIcon
-id toastMessage
-id toastRoot
 id toggle
 id top
 id topPanel
@@ -3930,6 +3928,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_signup_success
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout login
@@ -3998,7 +3997,6 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout slider_screen
 layout support_simple_spinner_dropdown_item
-layout toast
 menu navigation
 mipmap ic_launcher
 mipmap ic_launcher_foreground
@@ -4469,6 +4467,7 @@ style Base_Widget_MaterialComponents_TextView
 style CardView
 style CardView_Dark
 style CardView_Light
+style DialogSlideAnimation
 style MaterialAlertDialog_Material3
 style MaterialAlertDialog_Material3_Animation
 style MaterialAlertDialog_Material3_Body_Text

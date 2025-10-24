@@ -18,7 +18,7 @@
             android:id="@+id/logo_vertic"
             android:layout_width="196dp"
             android:layout_height="196dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="30dp"
             android:contentDescription="Vertical Stack Logo"
             android:src="@drawable/logo" />
 
@@ -112,7 +112,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center_horizontal"
-            android:paddingTop="24dp">
+            android:paddingTop="24dp"
+            android:paddingBottom="48dp">
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/loginToRegister"

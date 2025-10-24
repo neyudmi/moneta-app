@@ -42,7 +42,7 @@ int anim m3_side_sheet_exit_to_right 0x7f010028
 int anim mtrl_bottom_sheet_slide_in 0x7f010029
 int anim mtrl_bottom_sheet_slide_out 0x7f01002a
 int anim mtrl_card_lowers_interpolator 0x7f01002b
-int anim slide_down 0x7f01002c
+int anim slide_up 0x7f01002d
 int animator design_appbar_state_list_animator 0x7f020000
 int animator design_fab_hide_motion_spec 0x7f020001
 int animator design_fab_show_motion_spec 0x7f020002
@@ -3057,6 +3057,7 @@ int drawable ic_check 0x7f080103
 int drawable ic_checklist 0x7f0800fa
 int drawable ic_clear_black_24 0x7f08008e
 int drawable ic_clock_black_24dp 0x7f08008f
+int drawable ic_close 0x7f080104
 int drawable ic_detail 0x7f0800fb
 int drawable ic_dob 0x7f080090
 int drawable ic_edit 0x7f080091
@@ -3745,9 +3746,6 @@ int id time 0x7f0a01e8
 int id title 0x7f0a01e9
 int id titleDividerNoCustom 0x7f0a01ea
 int id title_template 0x7f0a01eb
-int id toastIcon 0x7f0a023d
-int id toastMessage 0x7f0a023e
-int id toastRoot 0x7f0a023f
 int id toggle 0x7f0a01ec
 int id top 0x7f0a01ed
 int id topPanel 0x7f0a01ee
@@ -3929,6 +3927,7 @@ int layout design_navigation_menu 0x7f0d002a
 int layout design_navigation_menu_item 0x7f0d002b
 int layout design_text_input_end_icon 0x7f0d002c
 int layout design_text_input_start_icon 0x7f0d002d
+int layout dialog_signup_success 0x7f0d0077
 int layout ime_base_split_test_activity 0x7f0d002e
 int layout ime_secondary_split_test_activity 0x7f0d002f
 int layout login 0x7f0d0030
@@ -3997,7 +3996,6 @@ int layout select_dialog_multichoice_material 0x7f0d006c
 int layout select_dialog_singlechoice_material 0x7f0d006d
 int layout slider_screen 0x7f0d006e
 int layout support_simple_spinner_dropdown_item 0x7f0d006f
-int layout toast 0x7f0d0076
 int menu navigation 0x7f140000
 int mipmap ic_launcher 0x7f0f0000
 int mipmap ic_launcher_foreground 0x7f0f0001
@@ -4468,6 +4466,7 @@ int style Base_Widget_MaterialComponents_TextView 0x7f12011f
 int style CardView 0x7f120120
 int style CardView_Dark 0x7f120121
 int style CardView_Light 0x7f120122
+int style DialogSlideAnimation 0x7f120468
 int style MaterialAlertDialog_Material3 0x7f120123
 int style MaterialAlertDialog_Material3_Animation 0x7f120124
 int style MaterialAlertDialog_Material3_Body_Text 0x7f120125

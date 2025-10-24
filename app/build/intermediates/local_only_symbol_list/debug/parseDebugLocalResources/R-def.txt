@@ -1,6 +1,6 @@
 R_DEF: Internal format may change without notice
 local
-anim slide_down
+anim slide_up
 array preloaded_fonts
 color black
 color blue
@@ -39,6 +39,7 @@ drawable ic_analytics
 drawable ic_bell
 drawable ic_check
 drawable ic_checklist
+drawable ic_close
 drawable ic_detail
 drawable ic_dob
 drawable ic_edit
@@ -176,9 +177,6 @@ id startbtn
 id sumSpend
 id tabGroup
 id tabLayout
-id toastIcon
-id toastMessage
-id toastRoot
 id transactionList
 id tvOverview
 id tvProfile
@@ -190,12 +188,12 @@ layout activity_forgot_password_reset
 layout activity_get_started
 layout activity_navigation
 layout dashboard
+layout dialog_signup_success
 layout login
 layout navigation
 layout profile
 layout register
 layout slider_screen
-layout toast
 menu navigation
 mipmap ic_launcher
 mipmap ic_launcher_foreground
@@ -209,4 +207,5 @@ string title1
 string title2
 string title3
 style Base.Theme.ExpenseManagement
+style DialogSlideAnimation
 style Theme.ExpenseManagement

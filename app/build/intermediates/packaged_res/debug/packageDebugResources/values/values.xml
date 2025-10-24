@@ -47,5 +47,8 @@
         <item name="colorSecondaryContainer">@color/primaryLight</item>
         <item name="colorSurfaceVariant">@color/primaryDark</item>
     </style>
+    <style name="DialogSlideAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+    </style>
     <style name="Theme.ExpenseManagement" parent="Base.Theme.ExpenseManagement"/>
 </resources>
