@@ -26,6 +26,7 @@ import com.google.android.material.textview.MaterialTextView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -81,8 +82,7 @@ public class Register extends AppCompatActivity {
             dateOfBirthInput.setText(selectedDate);
         });
 
-        // Bắt sự kiện nút Đăng ký
-        //btnRegister.setOnClickListener(v -> signupUser());
+        btnRegister.setOnClickListener(v -> signupUser());
 
         loginHere.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,5 +93,63 @@ public class Register extends AppCompatActivity {
             }
         });
     }
-}
 
+    private void signupUser() {
+        String username = editTextName.getText().toString().trim();
+        String email = editTextEmail.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
+        String confirmPassword = editTextConfirmPassword.getText().toString().trim();
+        String dob = dateOfBirthInput.getText().toString().trim();
+        String gender = genderDropdown.getText().toString().trim();
+
+        // Validate đơn giản
+        if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || dob.isEmpty() || gender.isEmpty()) {
+            Toast.makeText(this, "Vui lòng điền đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (!password.equals(confirmPassword)) {
+            Toast.makeText(this, "Mật khẩu xác nhận không khớp!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Chuẩn bị dữ liệu JSON để gửi lên server
+        JSONObject requestBody = new JSONObject();
+        try {
+            requestBody.put("fullName", username);
+            requestBody.put("email", email);
+            requestBody.put("password", password);
+            requestBody.put("birthDay", dob);
+            requestBody.put("gender", gender);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Lỗi tạo dữ liệu JSON!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // URL API backend
+        String url = baseUrl + "/auth/signup";
+
+        Log.d("MyAppTag", "URL: " + url);
+        // Gửi request
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.POST,
+                url,
+                requestBody,
+                response -> {
+                    Toast.makeText(this, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(Register.this, MainActivity.class);
+                    startActivity(intent);
+                },
+                error -> {
+                    if (error.networkResponse != null && error.networkResponse.data != null) {
+                        String responseBody = new String(error.networkResponse.data, StandardCharsets.UTF_8);
+                        Log.e("RegisterError", "Response body: " + responseBody);
+                    }
+                    Toast.makeText(this, "Lỗi khi đăng ký!", Toast.LENGTH_LONG).show();
+                });
+
+        // Thêm request vào queue
+        requestQueue.add(jsonObjectRequest);
+    }
+}
