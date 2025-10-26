@@ -213,5 +213,6 @@ string title2
 string title3
 style Base.Theme.ExpenseManagement
 style DialogSlideAnimation
+style NoActiveIndicator
 style Theme.ExpenseManagement
 xml network_security_config

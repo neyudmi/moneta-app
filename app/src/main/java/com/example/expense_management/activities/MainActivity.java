@@ -7,10 +7,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -64,29 +62,52 @@ public class MainActivity extends AppCompatActivity {
         MaterialTextView registerHere = findViewById(R.id.registerHere);
 
         // ---------------- Ẩn lỗi khi người dùng nhập lại ----------------
-        TextWatcher hideErrorWatcher = new TextWatcher() {
+        editTextEmail.addTextChangedListener(new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // Ẩn block đỏ
-                errorBlock.setVisibility(View.GONE);
-                // Gỡ lỗi ở từng ô
-                layoutEmail.setErrorEnabled(false);
-                layoutPassword.setErrorEnabled(false);
-            }
-            @Override public void afterTextChanged(Editable s) {}
-        };
-        editTextEmail.addTextChangedListener(hideErrorWatcher);
-        editTextPassword.addTextChangedListener(hideErrorWatcher);
 
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Nếu ô email có nhập, gỡ lỗi riêng ô email
+                if (!s.toString().trim().isEmpty()) {
+                    layoutEmail.setErrorEnabled(false);
+                    layoutEmail.setError(null);
+                }
+                // Nếu cả hai ô có dữ liệu, ẩn block lỗi chung
+                if (!editTextEmail.getText().toString().trim().isEmpty()
+                        || !editTextPassword.getText().toString().trim().isEmpty()) {
+                    errorBlock.setVisibility(View.GONE);
+                }
+            }
+
+            @Override public void afterTextChanged(Editable s) {}
+        });
+
+        editTextPassword.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Nếu ô password có nhập, gỡ lỗi riêng ô password
+                if (!s.toString().trim().isEmpty()) {
+                    layoutPassword.setErrorEnabled(false);
+                    layoutPassword.setError(null);
+                }
+                // Nếu cả hai ô có dữ liệu, ẩn block lỗi chung
+                if (!editTextEmail.getText().toString().trim().isEmpty()
+                        && !editTextPassword.getText().toString().trim().isEmpty()) {
+                    errorBlock.setVisibility(View.GONE);
+                }
+            }
+
+            @Override public void afterTextChanged(Editable s) {}
+        });
+
+        // ---------------- Sự kiện nút bấm ----------------
         btnLogin.setOnClickListener(v -> signInUser());
 
-        registerHere.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, Register.class));
-        });
+        registerHere.setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, Register.class)));
 
-        btnForgot.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, ForgotPassword.class));
-        });
+        btnForgot.setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, ForgotPassword.class)));
     }
 
     private void signInUser() {
@@ -170,6 +191,5 @@ public class MainActivity extends AppCompatActivity {
     private void showError(String message) {
         errorMessage.setText(message);
         errorBlock.setVisibility(View.VISIBLE);
-        //errorBlock.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_slide_in));
     }
 }

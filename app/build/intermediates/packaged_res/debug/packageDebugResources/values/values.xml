@@ -50,5 +50,9 @@
     <style name="DialogSlideAnimation">
         <item name="android:windowEnterAnimation">@anim/slide_up</item>
     </style>
+    <style name="NoActiveIndicator" parent="">
+        <item name="android:color">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
     <style name="Theme.ExpenseManagement" parent="Base.Theme.ExpenseManagement"/>
 </resources>
