@@ -18,7 +18,7 @@
             android:id="@+id/logo_vertic"
             android:layout_width="196dp"
             android:layout_height="196dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="30dp"
             android:contentDescription="Vertical Stack Logo"
             android:src="@drawable/logo" />
 
@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:hint="Họ tên"
+            android:id="@+id/layoutName"
             app:boxBackgroundMode="outline"
             app:boxCornerRadiusTopStart="12dp"
             app:boxCornerRadiusTopEnd="12dp"
@@ -54,6 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:hint="Email"
+            android:id="@+id/layoutEmail"
             app:boxBackgroundMode="outline"
             app:boxCornerRadiusTopStart="12dp"
             app:boxCornerRadiusTopEnd="12dp"
@@ -77,11 +79,11 @@
 
         <!-- Ngày sinh -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/dateOfBirthLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:hint="Ngày sinh"
+            android:id="@+id/layoutDob"
             app:boxBackgroundMode="outline"
             app:boxCornerRadiusTopStart="12dp"
             app:boxCornerRadiusTopEnd="12dp"
@@ -104,11 +106,11 @@
 
         <!-- Giới tính -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/genderLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:hint="Giới tính"
+            android:id="@+id/layoutGender"
             app:endIconMode="dropdown_menu"
             app:boxBackgroundMode="outline"
             app:boxCornerRadiusTopStart="12dp"
@@ -134,6 +136,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:hint="Mật khẩu"
+            android:id="@+id/layoutPassword"
             app:boxBackgroundMode="outline"
             app:boxCornerRadiusTopStart="12dp"
             app:boxCornerRadiusTopEnd="12dp"
@@ -163,6 +166,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:hint="Xác nhận mật khẩu"
+            android:id="@+id/layoutConfirmPassword"
             app:boxBackgroundMode="outline"
             app:boxCornerRadiusTopStart="12dp"
             app:boxCornerRadiusTopEnd="12dp"

@@ -12,12 +12,12 @@
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\mipmap-xxhdpi\\ic_launcher.webp"
-    },
-    {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
@@ -32,28 +32,32 @@
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_28pt_italic.ttf.flat",
-        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_28pt_italic.ttf"
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_bg_error.xml.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\bg_error.xml"
     },
     {
-        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_28pt_regular.ttf.flat",
-        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_28pt_regular.ttf"
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_28pt_italic.ttf.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_28pt_italic.ttf"
     },
     {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_ic_detail.png.flat",
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\ic_detail.png"
     },
     {
-        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_24pt_italic.ttf.flat",
-        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_24pt_italic.ttf"
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_28pt_regular.ttf.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_28pt_regular.ttf"
+    },
+    {
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_18pt_extralightitalic.ttf.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_18pt_extralightitalic.ttf"
     },
     {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_24pt_thin.ttf.flat",
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_24pt_thin.ttf"
     },
     {
-        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_18pt_extralightitalic.ttf.flat",
-        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_18pt_extralightitalic.ttf"
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_24pt_italic.ttf.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_24pt_italic.ttf"
     },
     {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_18pt_thinitalic.ttf.flat",
@@ -80,20 +84,16 @@
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_28pt_thin.ttf"
     },
     {
-        "merged": "com.example.expense_management.app-debug-32:/layout_dashboard.xml.flat",
-        "source": "com.example.expense_management.app-main-34:/layout/dashboard.xml"
-    },
-    {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\layout_activity_forgot_password.xml.flat",
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\layout\\activity_forgot_password.xml"
     },
     {
-        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
-    },
-    {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_28pt_thinitalic.ttf.flat",
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_28pt_thinitalic.ttf"
+    },
+    {
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
     },
     {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\mipmap-mdpi_ic_launcher_foreground.webp.flat",
@@ -116,12 +116,12 @@
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\ic_wallet.xml"
     },
     {
-        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\layout_profile.xml.flat",
-        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\layout\\profile.xml"
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\layout_dialog_signup_success.xml.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\layout\\dialog_signup_success.xml"
     },
     {
-        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_ic_profile.png.flat",
-        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\ic_profile.png"
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\layout_profile.xml.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\layout\\profile.xml"
     },
     {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_18pt_thin.ttf.flat",
@@ -132,6 +132,10 @@
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_18pt_semibold.ttf"
     },
     {
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\anim_fade_slide_in.xml.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\anim\\fade_slide_in.xml"
+    },
+    {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_18pt_semibolditalic.ttf.flat",
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_18pt_semibolditalic.ttf"
     },
@@ -140,12 +144,16 @@
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
     },
     {
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_ic_lock.png.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\ic_lock.png"
+    },
+    {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\color_stroke_selector.xml.flat",
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\color\\stroke_selector.xml"
     },
     {
-        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_ic_lock.png.flat",
-        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\ic_lock.png"
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_bg_toast_success.xml.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\bg_toast_success.xml"
     },
     {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_18pt_extrabolditalic.ttf.flat",
@@ -168,20 +176,20 @@
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\layout\\navigation.xml"
     },
     {
-        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\layout_activity_forgot_password_otp.xml.flat",
-        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\layout\\activity_forgot_password_otp.xml"
-    },
-    {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_24pt_extralightitalic.ttf.flat",
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_24pt_extralightitalic.ttf"
     },
     {
-        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_24pt_semibolditalic.ttf.flat",
-        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_24pt_semibolditalic.ttf"
-    },
-    {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_24pt_mediumitalic.ttf.flat",
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_24pt_mediumitalic.ttf"
+    },
+    {
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\layout_activity_forgot_password_otp.xml.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\layout\\activity_forgot_password_otp.xml"
+    },
+    {
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_24pt_semibolditalic.ttf.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_24pt_semibolditalic.ttf"
     },
     {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\mipmap-mdpi_ic_launcher_round.webp.flat",
@@ -232,6 +240,10 @@
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\ic_checklist.xml"
     },
     {
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_ic_error.xml.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\ic_error.xml"
+    },
+    {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_18pt_mediumitalic.ttf.flat",
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_18pt_mediumitalic.ttf"
     },
@@ -268,8 +280,20 @@
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_28pt_mediumitalic.ttf"
     },
     {
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\xml_network_security_config.xml.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\xml\\network_security_config.xml"
+    },
+    {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_slider2.png.flat",
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\slider2.png"
+    },
+    {
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_ic_check.png.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\ic_check.png"
+    },
+    {
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_ic_profile.xml.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\ic_profile.xml"
     },
     {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_ic_home.xml.flat",
@@ -300,16 +324,12 @@
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_18pt_bolditalic.ttf"
     },
     {
-        "merged": "com.example.expense_management.app-debug-32:/drawable_bg_gradient.xml.flat",
-        "source": "com.example.expense_management.app-main-34:/drawable/bg_gradient.xml"
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_ic_list.xml.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\ic_list.xml"
     },
     {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_24pt_medium.ttf.flat",
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_24pt_medium.ttf"
-    },
-    {
-        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\color_bottom_nav_selector.xml.flat",
-        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\color\\bottom_nav_selector.xml"
     },
     {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_24pt_thinitalic.ttf.flat",
@@ -400,6 +420,10 @@
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_28pt_extrabolditalic.ttf"
     },
     {
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\anim_slide_up.xml.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\anim\\slide_up.xml"
+    },
+    {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_ic_add.xml.flat",
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\ic_add.xml"
     },
@@ -428,20 +452,24 @@
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_18pt_blackitalic.ttf"
     },
     {
-        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_nav_bottom.xml.flat",
-        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\nav_bottom.xml"
-    },
-    {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_24pt_black.ttf.flat",
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_24pt_black.ttf"
     },
     {
-        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_ic_ai.xml.flat",
-        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\ic_ai.xml"
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_nav_bottom.xml.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\nav_bottom.xml"
+    },
+    {
+        "merged": "com.example.expense_management.app-debug-32:/layout_navigation.xml.flat",
+        "source": "com.example.expense_management.app-main-34:/layout/navigation.xml"
     },
     {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\layout_login.xml.flat",
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\layout\\login.xml"
+    },
+    {
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_ic_ai.xml.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\ic_ai.xml"
     },
     {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_28pt_lightitalic.ttf.flat",
@@ -456,12 +484,12 @@
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_ic_setting.xml.flat",
-        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\ic_setting.xml"
-    },
-    {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_18pt_lightitalic.ttf.flat",
         "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\font\\inter_18pt_lightitalic.ttf"
+    },
+    {
+        "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\drawable_ic_setting.xml.flat",
+        "source": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-main-34:\\drawable\\ic_setting.xml"
     },
     {
         "merged": "C:\\Users\\caodu\\.gradle\\daemon\\8.10.2\\com.example.expense_management.app-debug-32:\\font_inter_28pt_blackitalic.ttf.flat",

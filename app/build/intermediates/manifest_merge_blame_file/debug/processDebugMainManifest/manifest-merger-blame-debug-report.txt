@@ -13,169 +13,175 @@
 11-->D:\expense-management-app\app\src\main\AndroidManifest.xml:5:22-64
 12
 13    <permission
-13-->[androidx.core:core:1.13.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\637465beaa1d52e5d90f667a6fd167d1\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+13-->[androidx.core:core:1.13.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\1b89a4ef0596eddf891071b8ad4b689b\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
 14        android:name="com.example.expense_management.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-14-->[androidx.core:core:1.13.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\637465beaa1d52e5d90f667a6fd167d1\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+14-->[androidx.core:core:1.13.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\1b89a4ef0596eddf891071b8ad4b689b\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
 15        android:protectionLevel="signature" />
-15-->[androidx.core:core:1.13.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\637465beaa1d52e5d90f667a6fd167d1\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+15-->[androidx.core:core:1.13.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\1b89a4ef0596eddf891071b8ad4b689b\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
 16
 17    <uses-permission android:name="com.example.expense_management.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-17-->[androidx.core:core:1.13.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\637465beaa1d52e5d90f667a6fd167d1\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
-17-->[androidx.core:core:1.13.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\637465beaa1d52e5d90f667a6fd167d1\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+17-->[androidx.core:core:1.13.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\1b89a4ef0596eddf891071b8ad4b689b\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+17-->[androidx.core:core:1.13.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\1b89a4ef0596eddf891071b8ad4b689b\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
 18
 19    <application
-19-->D:\expense-management-app\app\src\main\AndroidManifest.xml:7:5-50:19
+19-->D:\expense-management-app\app\src\main\AndroidManifest.xml:7:5-56:19
 20        android:allowBackup="true"
 20-->D:\expense-management-app\app\src\main\AndroidManifest.xml:8:9-35
 21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-21-->[androidx.core:core:1.13.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\637465beaa1d52e5d90f667a6fd167d1\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+21-->[androidx.core:core:1.13.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\1b89a4ef0596eddf891071b8ad4b689b\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
 22        android:debuggable="true"
 23        android:extractNativeLibs="false"
 24        android:icon="@mipmap/ic_launcher"
 24-->D:\expense-management-app\app\src\main\AndroidManifest.xml:9:9-43
 25        android:label="@string/app_name"
 25-->D:\expense-management-app\app\src\main\AndroidManifest.xml:10:9-41
-26        android:roundIcon="@mipmap/ic_launcher_round"
-26-->D:\expense-management-app\app\src\main\AndroidManifest.xml:11:9-54
-27        android:supportsRtl="true"
-27-->D:\expense-management-app\app\src\main\AndroidManifest.xml:12:9-35
-28        android:testOnly="true"
-29        android:theme="@style/Theme.ExpenseManagement"
-29-->D:\expense-management-app\app\src\main\AndroidManifest.xml:13:9-55
-30        android:usesCleartextTraffic="true" >
-30-->D:\expense-management-app\app\src\main\AndroidManifest.xml:14:9-44
-31        <activity
-31-->D:\expense-management-app\app\src\main\AndroidManifest.xml:16:9-18:40
-32            android:name="com.example.expense_management.activities.HomeActivity"
-32-->D:\expense-management-app\app\src\main\AndroidManifest.xml:17:13-52
-33            android:exported="false" />
-33-->D:\expense-management-app\app\src\main\AndroidManifest.xml:18:13-37
-34        <activity
-34-->D:\expense-management-app\app\src\main\AndroidManifest.xml:19:9-21:40
-35            android:name="com.example.expense_management.activities.ForgotPasswordReset"
-35-->D:\expense-management-app\app\src\main\AndroidManifest.xml:20:13-59
-36            android:exported="false" />
-36-->D:\expense-management-app\app\src\main\AndroidManifest.xml:21:13-37
-37        <activity
-37-->D:\expense-management-app\app\src\main\AndroidManifest.xml:22:9-24:40
-38            android:name="com.example.expense_management.activities.ForgotPasswordOTP"
-38-->D:\expense-management-app\app\src\main\AndroidManifest.xml:23:13-57
-39            android:exported="false" />
-39-->D:\expense-management-app\app\src\main\AndroidManifest.xml:24:13-37
-40        <activity
-40-->D:\expense-management-app\app\src\main\AndroidManifest.xml:25:9-27:40
-41            android:name="com.example.expense_management.activities.ForgotPassword"
-41-->D:\expense-management-app\app\src\main\AndroidManifest.xml:26:13-54
-42            android:exported="false" />
-42-->D:\expense-management-app\app\src\main\AndroidManifest.xml:27:13-37
-43        <activity
-43-->D:\expense-management-app\app\src\main\AndroidManifest.xml:28:9-36:20
-44            android:name="com.example.expense_management.activities.GetStarted"
-44-->D:\expense-management-app\app\src\main\AndroidManifest.xml:29:13-50
-45            android:exported="true" >
-45-->D:\expense-management-app\app\src\main\AndroidManifest.xml:30:13-36
-46            <intent-filter>
-46-->D:\expense-management-app\app\src\main\AndroidManifest.xml:31:13-35:29
-47                <action android:name="android.intent.action.MAIN" />
-47-->D:\expense-management-app\app\src\main\AndroidManifest.xml:32:17-69
-47-->D:\expense-management-app\app\src\main\AndroidManifest.xml:32:25-66
-48
-49                <category android:name="android.intent.category.LAUNCHER" />
-49-->D:\expense-management-app\app\src\main\AndroidManifest.xml:34:17-77
-49-->D:\expense-management-app\app\src\main\AndroidManifest.xml:34:27-74
-50            </intent-filter>
-51        </activity>
-52        <activity
-52-->D:\expense-management-app\app\src\main\AndroidManifest.xml:37:9-39:40
-53            android:name="com.example.expense_management.activities.Navigation"
-53-->D:\expense-management-app\app\src\main\AndroidManifest.xml:38:13-50
-54            android:exported="false" />
-54-->D:\expense-management-app\app\src\main\AndroidManifest.xml:39:13-37
-55        <activity
-55-->D:\expense-management-app\app\src\main\AndroidManifest.xml:40:9-42:40
-56            android:name="com.example.expense_management.activities.MainActivity"
-56-->D:\expense-management-app\app\src\main\AndroidManifest.xml:41:13-52
-57            android:exported="false" />
-57-->D:\expense-management-app\app\src\main\AndroidManifest.xml:42:13-37
-58        <activity
-58-->D:\expense-management-app\app\src\main\AndroidManifest.xml:43:9-45:40
-59            android:name="com.example.expense_management.activities.Register"
-59-->D:\expense-management-app\app\src\main\AndroidManifest.xml:44:13-48
-60            android:exported="false" />
-60-->D:\expense-management-app\app\src\main\AndroidManifest.xml:45:13-37
-61
-62        <meta-data
-62-->D:\expense-management-app\app\src\main\AndroidManifest.xml:47:9-49:57
-63            android:name="preloaded_fonts"
-63-->D:\expense-management-app\app\src\main\AndroidManifest.xml:48:13-43
-64            android:resource="@array/preloaded_fonts" />
-64-->D:\expense-management-app\app\src\main\AndroidManifest.xml:49:13-54
-65
-66        <provider
-66-->[androidx.emoji2:emoji2:1.3.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\8d2e2779a39ddba4e4d19de3f4e84dd6\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-67            android:name="androidx.startup.InitializationProvider"
-67-->[androidx.emoji2:emoji2:1.3.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\8d2e2779a39ddba4e4d19de3f4e84dd6\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
-68            android:authorities="com.example.expense_management.androidx-startup"
-68-->[androidx.emoji2:emoji2:1.3.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\8d2e2779a39ddba4e4d19de3f4e84dd6\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
-69            android:exported="false" >
-69-->[androidx.emoji2:emoji2:1.3.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\8d2e2779a39ddba4e4d19de3f4e84dd6\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
-70            <meta-data
-70-->[androidx.emoji2:emoji2:1.3.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\8d2e2779a39ddba4e4d19de3f4e84dd6\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-71                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-71-->[androidx.emoji2:emoji2:1.3.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\8d2e2779a39ddba4e4d19de3f4e84dd6\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
-72                android:value="androidx.startup" />
-72-->[androidx.emoji2:emoji2:1.3.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\8d2e2779a39ddba4e4d19de3f4e84dd6\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+26        android:networkSecurityConfig="@xml/network_security_config"
+26-->D:\expense-management-app\app\src\main\AndroidManifest.xml:15:9-69
+27        android:roundIcon="@mipmap/ic_launcher_round"
+27-->D:\expense-management-app\app\src\main\AndroidManifest.xml:11:9-54
+28        android:supportsRtl="true"
+28-->D:\expense-management-app\app\src\main\AndroidManifest.xml:12:9-35
+29        android:testOnly="true"
+30        android:theme="@style/Theme.ExpenseManagement"
+30-->D:\expense-management-app\app\src\main\AndroidManifest.xml:13:9-55
+31        android:usesCleartextTraffic="true" >
+31-->D:\expense-management-app\app\src\main\AndroidManifest.xml:16:9-44
+32        <activity
+32-->D:\expense-management-app\app\src\main\AndroidManifest.xml:18:9-20:40
+33            android:name="com.example.expense_management.activities.HomeActivity"
+33-->D:\expense-management-app\app\src\main\AndroidManifest.xml:19:13-52
+34            android:exported="false" />
+34-->D:\expense-management-app\app\src\main\AndroidManifest.xml:20:13-37
+35        <activity
+35-->D:\expense-management-app\app\src\main\AndroidManifest.xml:21:9-23:40
+36            android:name="com.example.expense_management.activities.ForgotPasswordReset"
+36-->D:\expense-management-app\app\src\main\AndroidManifest.xml:22:13-59
+37            android:exported="false" />
+37-->D:\expense-management-app\app\src\main\AndroidManifest.xml:23:13-37
+38        <activity
+38-->D:\expense-management-app\app\src\main\AndroidManifest.xml:24:9-26:40
+39            android:name="com.example.expense_management.activities.ForgotPasswordOTP"
+39-->D:\expense-management-app\app\src\main\AndroidManifest.xml:25:13-57
+40            android:exported="false" />
+40-->D:\expense-management-app\app\src\main\AndroidManifest.xml:26:13-37
+41        <activity
+41-->D:\expense-management-app\app\src\main\AndroidManifest.xml:27:9-29:40
+42            android:name="com.example.expense_management.activities.ForgotPassword"
+42-->D:\expense-management-app\app\src\main\AndroidManifest.xml:28:13-54
+43            android:exported="false" />
+43-->D:\expense-management-app\app\src\main\AndroidManifest.xml:29:13-37
+44        <activity
+44-->D:\expense-management-app\app\src\main\AndroidManifest.xml:30:9-38:20
+45            android:name="com.example.expense_management.activities.GetStarted"
+45-->D:\expense-management-app\app\src\main\AndroidManifest.xml:31:13-50
+46            android:exported="true" >
+46-->D:\expense-management-app\app\src\main\AndroidManifest.xml:32:13-36
+47            <intent-filter>
+47-->D:\expense-management-app\app\src\main\AndroidManifest.xml:33:13-37:29
+48                <action android:name="android.intent.action.MAIN" />
+48-->D:\expense-management-app\app\src\main\AndroidManifest.xml:34:17-69
+48-->D:\expense-management-app\app\src\main\AndroidManifest.xml:34:25-66
+49
+50                <category android:name="android.intent.category.LAUNCHER" />
+50-->D:\expense-management-app\app\src\main\AndroidManifest.xml:36:17-77
+50-->D:\expense-management-app\app\src\main\AndroidManifest.xml:36:27-74
+51            </intent-filter>
+52        </activity>
+53        <activity
+53-->D:\expense-management-app\app\src\main\AndroidManifest.xml:39:9-41:40
+54            android:name="com.example.expense_management.activities.Navigation"
+54-->D:\expense-management-app\app\src\main\AndroidManifest.xml:40:13-50
+55            android:exported="false" />
+55-->D:\expense-management-app\app\src\main\AndroidManifest.xml:41:13-37
+56        <activity
+56-->D:\expense-management-app\app\src\main\AndroidManifest.xml:42:9-45:57
+57            android:name="com.example.expense_management.activities.MainActivity"
+57-->D:\expense-management-app\app\src\main\AndroidManifest.xml:43:13-52
+58            android:exported="false"
+58-->D:\expense-management-app\app\src\main\AndroidManifest.xml:44:13-37
+59            android:windowSoftInputMode="adjustResize" />
+59-->D:\expense-management-app\app\src\main\AndroidManifest.xml:45:13-55
+60        <activity
+60-->D:\expense-management-app\app\src\main\AndroidManifest.xml:46:9-49:57
+61            android:name="com.example.expense_management.activities.Register"
+61-->D:\expense-management-app\app\src\main\AndroidManifest.xml:47:13-48
+62            android:exported="false"
+62-->D:\expense-management-app\app\src\main\AndroidManifest.xml:48:13-37
+63            android:windowSoftInputMode="adjustResize" />
+63-->D:\expense-management-app\app\src\main\AndroidManifest.xml:49:13-55
+64
+65        <meta-data
+65-->D:\expense-management-app\app\src\main\AndroidManifest.xml:51:9-53:57
+66            android:name="preloaded_fonts"
+66-->D:\expense-management-app\app\src\main\AndroidManifest.xml:52:13-43
+67            android:resource="@array/preloaded_fonts" />
+67-->D:\expense-management-app\app\src\main\AndroidManifest.xml:53:13-54
+68
+69        <provider
+69-->[androidx.emoji2:emoji2:1.3.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\ba719fc42cbbd079e9e20163ced8ada6\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+70            android:name="androidx.startup.InitializationProvider"
+70-->[androidx.emoji2:emoji2:1.3.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\ba719fc42cbbd079e9e20163ced8ada6\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+71            android:authorities="com.example.expense_management.androidx-startup"
+71-->[androidx.emoji2:emoji2:1.3.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\ba719fc42cbbd079e9e20163ced8ada6\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+72            android:exported="false" >
+72-->[androidx.emoji2:emoji2:1.3.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\ba719fc42cbbd079e9e20163ced8ada6\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
 73            <meta-data
-73-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\caodu\.gradle\caches\8.10.2\transforms\3364cc57ad69464a27e7f247b80f1e09\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
-74                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-74-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\caodu\.gradle\caches\8.10.2\transforms\3364cc57ad69464a27e7f247b80f1e09\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+73-->[androidx.emoji2:emoji2:1.3.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\ba719fc42cbbd079e9e20163ced8ada6\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+74                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+74-->[androidx.emoji2:emoji2:1.3.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\ba719fc42cbbd079e9e20163ced8ada6\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
 75                android:value="androidx.startup" />
-75-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\caodu\.gradle\caches\8.10.2\transforms\3364cc57ad69464a27e7f247b80f1e09\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+75-->[androidx.emoji2:emoji2:1.3.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\ba719fc42cbbd079e9e20163ced8ada6\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
 76            <meta-data
-76-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
-77                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-77-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+76-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\caodu\.gradle\caches\8.10.2\transforms\7f939e078380bf5b07c12d49b3dcb7fc\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+77                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+77-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\caodu\.gradle\caches\8.10.2\transforms\7f939e078380bf5b07c12d49b3dcb7fc\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
 78                android:value="androidx.startup" />
-78-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
-79        </provider>
-80
-81        <receiver
-81-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
-82            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-82-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
-83            android:directBootAware="false"
-83-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
-84            android:enabled="true"
-84-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
-85            android:exported="true"
-85-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
-86            android:permission="android.permission.DUMP" >
-86-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
-87            <intent-filter>
-87-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
-88                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-88-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
-88-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
-89            </intent-filter>
+78-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\caodu\.gradle\caches\8.10.2\transforms\7f939e078380bf5b07c12d49b3dcb7fc\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+79            <meta-data
+79-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+80                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+80-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+81                android:value="androidx.startup" />
+81-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+82        </provider>
+83
+84        <receiver
+84-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+85            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+85-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+86            android:directBootAware="false"
+86-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+87            android:enabled="true"
+87-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+88            android:exported="true"
+88-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+89            android:permission="android.permission.DUMP" >
+89-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
 90            <intent-filter>
-90-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
-91                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-91-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
-91-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+90-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+91                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+91-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+91-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
 92            </intent-filter>
 93            <intent-filter>
-93-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
-94                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-94-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
-94-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+93-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+94                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+94-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+94-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
 95            </intent-filter>
 96            <intent-filter>
-96-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
-97                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-97-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
-97-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\5ca2054a5e60e397b52e98d683a09417\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+96-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+97                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+97-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+97-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
 98            </intent-filter>
-99        </receiver>
-100    </application>
-101
-102</manifest>
+99            <intent-filter>
+99-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+100                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+100-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+100-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\caodu\.gradle\caches\8.10.2\transforms\9d7d7688c656d271fbe253a6ed59a587\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+101            </intent-filter>
+102        </receiver>
+103    </application>
+104
+105</manifest>

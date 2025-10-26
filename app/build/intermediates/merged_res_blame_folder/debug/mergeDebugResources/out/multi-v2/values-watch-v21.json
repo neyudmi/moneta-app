@@ -4,7 +4,7 @@
             "outputFile": "com.example.expense_management.app-mergeDebugResources-30:/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\caodu\\.gradle\\caches\\8.10.2\\transforms\\7f975d3b1590ac491d30d0a876563d21\\transformed\\appcompat-1.7.0\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "source": "C:\\Users\\caodu\\.gradle\\caches\\8.10.2\\transforms\\a3789bad456d19543eabf12e524b754f\\transformed\\appcompat-1.7.0\\res\\values-watch-v21\\values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

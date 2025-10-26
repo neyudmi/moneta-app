@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="24dp"
-            android:paddingVertical="16dp"
+            android:paddingVertical="10dp"
             android:text="Trang chủ"
             android:fontFamily="@font/inter_24pt_bold"
             android:textSize="18sp"
@@ -46,7 +46,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="24dp">
+            android:padding="24dp"
+            android:background="@color/grey5">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardExpense"
@@ -64,13 +65,15 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:background="@drawable/bg_gradient"
-                    android:padding="20dp">
+                    android:paddingLeft="15dp"
+                    android:paddingVertical="20dp">
                     <ImageView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:src="@drawable/ic_wallet"
                         app:tint="@color/white"
                         app:itemIconSize="50dp"
+                        android:layout_marginBottom="10dp"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -79,15 +82,16 @@
                         android:fontFamily="@font/inter_18pt_regular"
                         android:textSize="16sp"
                         android:textColor="#FFFFFF" />
+
                     <TextView
                         android:id="@+id/sumSpend"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
-                        android:text="4.000.000 VNĐ"
+                        android:layout_marginTop="10dp"
                         android:fontFamily="@font/inter_18pt_semibold"
-                        android:textSize="18sp"
-                        android:textColor="#FFFFFF" /> <!-- White text for contrast -->
+                        android:text="0 VNĐ"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" /> <!-- White text for contrast -->
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -106,26 +110,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@color/grey5"
-                    android:padding="20dp">
+                    android:background="@color/grey4"
+                    android:paddingLeft="15dp"
+                    android:paddingVertical="20dp">
                     <ImageView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:src="@drawable/ic_topic"
-                        app:tint="@color/black" />
+                        app:tint="@color/black"
+                        android:layout_marginBottom="10dp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Quản lý"
                         android:fontFamily="@font/inter_18pt_regular"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         android:textColor="@color/black" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
+                        android:layout_marginTop="10dp"
                         android:text="Danh Mục"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:fontFamily="@font/inter_24pt_semibold"
                         android:textColor="@color/black" />
                 </LinearLayout>
@@ -139,8 +145,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@+id/cardGroup"
-            android:padding="24dp"
-            android:background="@drawable/corner">
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingHorizontal="24dp"
+            android:background="@color/white">
 
             <LinearLayout
                 android:id="@+id/tabGroup"
@@ -148,7 +156,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="8dp"
                 android:weightSum="3">
 
                 <com.google.android.material.button.MaterialButton
@@ -233,7 +240,7 @@
             android:id="@+id/transactionList"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="@color/grey5"
+            android:background="@color/white"
             app:layout_constraintTop_toBottomOf="@id/tabLayout"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

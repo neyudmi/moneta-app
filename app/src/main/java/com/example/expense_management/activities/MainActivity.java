@@ -3,9 +3,12 @@ package com.example.expense_management.activities;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,17 +19,24 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.expense_management.BuildConfig;
 import com.example.expense_management.R;
-//import com.example.expense_management.api.ApiService;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.nio.charset.StandardCharsets;
+
 public class MainActivity extends AppCompatActivity {
+
     private TextInputEditText editTextEmail, editTextPassword;
+    private TextInputLayout layoutEmail, layoutPassword;
     private MaterialButton btnLogin, btnForgot;
+    private LinearLayout errorBlock;
+    private TextView errorMessage;
+
     private RequestQueue requestQueue;
     private String baseUrl;
     private SharedPreferences prefs;
@@ -36,76 +46,92 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.login);
+
         prefs = getSharedPreferences("TokenStore", MODE_PRIVATE);
-        MaterialTextView registerHere = findViewById(R.id.registerHere);
         baseUrl = BuildConfig.BASE_URL;
-        String accessToken = prefs.getString("access_token", null);
-        String refreshToken = prefs.getString("refresh_token", null);
         requestQueue = Volley.newRequestQueue(this);
 
-        if (accessToken != null && refreshToken != null) {
-            getInfo(accessToken, refreshToken);
-        }
-
-        registerHere.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Register.class);
-                startActivity(intent);
-
-            }
-        });
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
-        requestQueue = Volley.newRequestQueue(this);
+        layoutEmail = findViewById(R.id.layoutEmail);
+        layoutPassword = findViewById(R.id.layoutPassword);
         btnLogin = findViewById(R.id.btnLogin);
+        errorBlock = findViewById(R.id.errorBlock);
+        errorMessage = findViewById(R.id.errorMessage);
         btnForgot = findViewById(R.id.btnforgotPassWord);
+        MaterialTextView registerHere = findViewById(R.id.registerHere);
 
-        btnForgot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ForgotPassword.class);
-                startActivity(intent);
+        // ---------------- Ẩn lỗi khi người dùng nhập lại ----------------
+        editTextEmail.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Nếu ô email có nhập, gỡ lỗi riêng ô email
+                if (!s.toString().trim().isEmpty()) {
+                    layoutEmail.setErrorEnabled(false);
+                    layoutEmail.setError(null);
+                }
+                // Nếu cả hai ô có dữ liệu, ẩn block lỗi chung
+                if (!editTextEmail.getText().toString().trim().isEmpty()
+                        || !editTextPassword.getText().toString().trim().isEmpty()) {
+                    errorBlock.setVisibility(View.GONE);
+                }
             }
-        });
-        //btnLogin.setOnClickListener(v -> signInUser() );
 
-        btnLogin.setOnClickListener(v -> {
-            String email = editTextEmail.getText().toString().trim();
-            String password = editTextPassword.getText().toString().trim();
-
-            if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
-            } else {
-                // 🔹 Giả lập đăng nhập thành công
-                Toast.makeText(this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
-
-                // Lưu tạm dữ liệu giả lập vào SharedPreferences (nếu cần)
-                SharedPreferences prefs = getSharedPreferences("UserStore", MODE_PRIVATE);
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putString("fullName", "Người dùng thử nghiệm");
-                editor.putString("email", email);
-                editor.apply();
-
-                // 🔹 Chuyển sang màn hình chính
-                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                startActivity(intent);
-                finish();
-            }
+            @Override public void afterTextChanged(Editable s) {}
         });
 
+        editTextPassword.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Nếu ô password có nhập, gỡ lỗi riêng ô password
+                if (!s.toString().trim().isEmpty()) {
+                    layoutPassword.setErrorEnabled(false);
+                    layoutPassword.setError(null);
+                }
+                // Nếu cả hai ô có dữ liệu, ẩn block lỗi chung
+                if (!editTextEmail.getText().toString().trim().isEmpty()
+                        && !editTextPassword.getText().toString().trim().isEmpty()) {
+                    errorBlock.setVisibility(View.GONE);
+                }
+            }
+
+            @Override public void afterTextChanged(Editable s) {}
+        });
+
+        // ---------------- Sự kiện nút bấm ----------------
+        btnLogin.setOnClickListener(v -> signInUser());
+
+        registerHere.setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, Register.class)));
+
+        btnForgot.setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, ForgotPassword.class)));
     }
 
     private void signInUser() {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
 
-        if (email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Vui lòng điền đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
-            return;
+        boolean isValid = true;
+
+        layoutEmail.setErrorEnabled(false);
+        layoutPassword.setErrorEnabled(false);
+        errorBlock.setVisibility(View.GONE);
+
+        if (email.isEmpty()) {
+            layoutEmail.setErrorEnabled(true);
+            layoutEmail.setError("Vui lòng nhập email");
+            isValid = false;
         }
+        if (password.isEmpty()) {
+            layoutPassword.setErrorEnabled(true);
+            layoutPassword.setError("Vui lòng nhập mật khẩu");
+            isValid = false;
+        }
+
+        if (!isValid) return;
 
         JSONObject requestBody = new JSONObject();
         try {
@@ -115,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        String url = baseUrl + "/auth/login";
+        String url = baseUrl + "/auth/signin";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.POST,
@@ -123,156 +149,47 @@ public class MainActivity extends AppCompatActivity {
                 requestBody,
                 response -> {
                     try {
-                        prefs = getSharedPreferences("TokenStore", MODE_PRIVATE);
                         String accessToken = response.getString("accessToken");
                         String refreshToken = response.getString("refreshToken");
+                        long expiresIn = response.getLong("accessExpiresIn");
+                        long expiryTime = System.currentTimeMillis() + expiresIn;
+
                         SharedPreferences.Editor editor = prefs.edit();
                         editor.putString("access_token", accessToken);
                         editor.putString("refresh_token", refreshToken);
+                        editor.putLong("access_expiry", expiryTime);
                         editor.apply();
-                        Toast.makeText(this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
-                        getUserInfoAndNavigate(accessToken);
+
+                        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                        startActivity(intent);
+                        finish();
+
                     } catch (JSONException e) {
-                        throw new RuntimeException(e);
+                        e.printStackTrace();
                     }
                 },
                 error -> {
-                    Toast.makeText(this, "Lỗi khi đăng nhập: " + error.toString(), Toast.LENGTH_LONG).show();
-                    Log.e("LoginError", "Lỗi khi đăng nhập", error);
+                    if (error.networkResponse != null) {
+                        int status = error.networkResponse.statusCode;
+                        String body = new String(error.networkResponse.data, StandardCharsets.UTF_8);
+                        Log.e("LoginError", "Status: " + status + ", Response: " + body);
+
+                        if (status == 401 || status == 403) {
+                            showError("Sai email hoặc mật khẩu");
+                        } else {
+                            showError("Lỗi máy chủ: " + status);
+                        }
+                    } else {
+                        showError("Không thể kết nối đến máy chủ!");
+                    }
                 }
         );
 
         requestQueue.add(jsonObjectRequest);
     }
 
-    private void getUserInfoAndNavigate(String accessToken) {
-        String url = baseUrl + "/users/me";
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-                Request.Method.GET,
-                url,
-                null,
-                response -> {
-                    try {
-                        String fullName = response.getString("fullName");
-                        String email = response.getString("email");
-                        String dob = response.getString("birthDay");
-                        String gender = response.getString("gender");
-                        String id = response.getString("id");
-
-                        SharedPreferences sharedPreferences = getSharedPreferences("UserStore", MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString("fullName", fullName);
-                        editor.putString("email", email);
-                        editor.putString("birthDay", dob);
-                        editor.putString("gender", gender);
-                        editor.putString("id", id);
-                        editor.apply();
-
-                        // Now that we have saved the user info, navigate to the main app
-                        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                        startActivity(intent);
-                        finish();
-                    } catch (JSONException e) {
-                        Toast.makeText(this, "Lỗi khi xử lý thông tin người dùng", Toast.LENGTH_SHORT).show();
-                        Log.e("UserInfoError", "Lỗi khi xử lý thông tin người dùng", e);
-                    }
-                },
-                error -> {
-                    Toast.makeText(this, "Lỗi khi lấy thông tin người dùng", Toast.LENGTH_SHORT).show();
-                    Log.e("UserInfoError", "Lỗi khi lấy thông tin người dùng", error);
-                }
-        ) {
-            @Override
-            public java.util.Map<String, String> getHeaders() {
-                java.util.Map<String, String> headers = new java.util.HashMap<>();
-                headers.put("Authorization", "Bearer " + accessToken);
-                headers.put("Content-Type", "application/json");
-                return headers;
-            }
-        };
-        requestQueue.add(jsonObjectRequest);
-    }
-
-    private void getInfo(String accessToken, String refreshToken) {
-        String url = baseUrl + "/users/me";
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-                Request.Method.GET,
-                url,
-                null,
-                response -> {
-                    try {
-                        String fullName = response.getString("fullName");
-                        String email = response.getString("email");
-                        String dob = response.getString("birthDay");
-                        String gender = response.getString("gender");
-                        String id = response.getString("id");
-
-                        SharedPreferences sharedPreferences = getSharedPreferences("UserStore", MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString("fullName", fullName);
-                        editor.putString("email", email);
-                        editor.putString("birthDay", dob);
-                        editor.putString("gender", gender);
-                        editor.putString("id", id);
-                        editor.apply();
-
-                        Toast.makeText(this, "Đăng nhập thành công!", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                        startActivity(intent);
-                        finish();
-                    } catch (JSONException e) {
-                        throw new RuntimeException(e);
-                    }
-                },
-                error -> {
-                    refreshTokens(refreshToken);
-                }
-        ) {
-            @Override
-            public java.util.Map<String, String> getHeaders() {
-                java.util.Map<String, String> headers = new java.util.HashMap<>();
-                headers.put("Authorization", "Bearer " + accessToken);
-                headers.put("Content-Type", "application/json");
-                return headers;
-            }
-        };
-        requestQueue.add(jsonObjectRequest);
-    }
-
-    private void refreshTokens(String refreshToken) {
-        String url = baseUrl + "/refresh";
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-                Request.Method.GET,
-                url,
-                null,
-                response -> {
-                    try {
-                        String accessToken = response.getString("accessToken");
-                        String newRefreshToken = response.getString("refreshToken");
-                        SharedPreferences.Editor editor = prefs.edit();
-                        editor.putString("access_token", accessToken);
-                        editor.putString("refresh_token", newRefreshToken);
-                        editor.apply();
-                        getInfo(accessToken, newRefreshToken);
-                    } catch (JSONException e) {
-                        throw new RuntimeException(e);
-                    }
-                },
-                error -> {
-                    SharedPreferences sharedPreferences = getSharedPreferences("UserStore", MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.clear();
-                    editor.apply();
-                }
-        ) {
-            @Override
-            public java.util.Map<String, String> getHeaders() {
-                java.util.Map<String, String> headers = new java.util.HashMap<>();
-                headers.put("Authorization", "Bearer " + refreshToken);
-                headers.put("Content-Type", "application/json");
-                return headers;
-            }
-        };
-        requestQueue.add(jsonObjectRequest);
+    private void showError(String message) {
+        errorMessage.setText(message);
+        errorBlock.setVisibility(View.VISIBLE);
     }
 }
