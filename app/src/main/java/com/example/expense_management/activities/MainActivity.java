@@ -7,6 +7,9 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -18,7 +21,6 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.expense_management.BuildConfig;
 import com.example.expense_management.R;
-import com.example.expense_management.api.ApiServices;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -30,10 +32,13 @@ import org.json.JSONObject;
 import java.nio.charset.StandardCharsets;
 
 public class MainActivity extends AppCompatActivity {
+
     private TextInputEditText editTextEmail, editTextPassword;
     private TextInputLayout layoutEmail, layoutPassword;
+    private MaterialButton btnLogin, btnForgot;
+    private LinearLayout errorBlock;
+    private TextView errorMessage;
 
-    private MaterialButton btnLogin;
     private RequestQueue requestQueue;
     private String baseUrl;
     private SharedPreferences prefs;
@@ -43,28 +48,45 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.login);
+
         prefs = getSharedPreferences("TokenStore", MODE_PRIVATE);
-        MaterialTextView registerHere = findViewById(R.id.registerHere);
         baseUrl = BuildConfig.BASE_URL;
-        String accessToken = prefs.getString("access_token", null);
-        String refreshToken = prefs.getString("refresh_token", null);
         requestQueue = Volley.newRequestQueue(this);
 
-
-        registerHere.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Register.class);
-                startActivity(intent);
-            }
-        });
-        editTextEmail=findViewById(R.id.editTextEmail);
-        editTextPassword=findViewById(R.id.editTextPassword);
-        requestQueue = Volley.newRequestQueue(this);
-        btnLogin=findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(v -> signInUser() );
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextPassword = findViewById(R.id.editTextPassword);
         layoutEmail = findViewById(R.id.layoutEmail);
         layoutPassword = findViewById(R.id.layoutPassword);
+        btnLogin = findViewById(R.id.btnLogin);
+        errorBlock = findViewById(R.id.errorBlock);
+        errorMessage = findViewById(R.id.errorMessage);
+        btnForgot = findViewById(R.id.btnforgotPassWord);
+        MaterialTextView registerHere = findViewById(R.id.registerHere);
+
+        // ---------------- Ẩn lỗi khi người dùng nhập lại ----------------
+        TextWatcher hideErrorWatcher = new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Ẩn block đỏ
+                errorBlock.setVisibility(View.GONE);
+                // Gỡ lỗi ở từng ô
+                layoutEmail.setErrorEnabled(false);
+                layoutPassword.setErrorEnabled(false);
+            }
+            @Override public void afterTextChanged(Editable s) {}
+        };
+        editTextEmail.addTextChangedListener(hideErrorWatcher);
+        editTextPassword.addTextChangedListener(hideErrorWatcher);
+
+        btnLogin.setOnClickListener(v -> signInUser());
+
+        registerHere.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, Register.class));
+        });
+
+        btnForgot.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, ForgotPassword.class));
+        });
     }
 
     private void signInUser() {
@@ -73,23 +95,23 @@ public class MainActivity extends AppCompatActivity {
 
         boolean isValid = true;
 
-        // Reset lỗi trước
-        layoutEmail.setError(null);
-        layoutPassword.setError(null);
+        layoutEmail.setErrorEnabled(false);
+        layoutPassword.setErrorEnabled(false);
+        errorBlock.setVisibility(View.GONE);
 
-        // Kiểm tra từng trường
         if (email.isEmpty()) {
+            layoutEmail.setErrorEnabled(true);
             layoutEmail.setError("Vui lòng nhập email");
             isValid = false;
         }
         if (password.isEmpty()) {
+            layoutPassword.setErrorEnabled(true);
             layoutPassword.setError("Vui lòng nhập mật khẩu");
             isValid = false;
         }
 
         if (!isValid) return;
 
-        // Tạo request body
         JSONObject requestBody = new JSONObject();
         try {
             requestBody.put("email", email);
@@ -106,7 +128,6 @@ public class MainActivity extends AppCompatActivity {
                 requestBody,
                 response -> {
                     try {
-                        prefs = getSharedPreferences("TokenStore", MODE_PRIVATE);
                         String accessToken = response.getString("accessToken");
                         String refreshToken = response.getString("refreshToken");
                         long expiresIn = response.getLong("accessExpiresIn");
@@ -117,11 +138,13 @@ public class MainActivity extends AppCompatActivity {
                         editor.putString("refresh_token", refreshToken);
                         editor.putLong("access_expiry", expiryTime);
                         editor.apply();
+
                         Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                         startActivity(intent);
                         finish();
+
                     } catch (JSONException e) {
-                        throw new RuntimeException(e);
+                        e.printStackTrace();
                     }
                 },
                 error -> {
@@ -131,40 +154,22 @@ public class MainActivity extends AppCompatActivity {
                         Log.e("LoginError", "Status: " + status + ", Response: " + body);
 
                         if (status == 401 || status == 403) {
-                            layoutPassword.setError("Sai email hoặc mật khẩu");
+                            showError("Sai email hoặc mật khẩu");
                         } else {
-                            Toast.makeText(this, "Lỗi máy chủ: " + status, Toast.LENGTH_SHORT).show();
+                            showError("Lỗi máy chủ: " + status);
                         }
                     } else {
-                        Toast.makeText(this, "Không thể kết nối đến máy chủ!", Toast.LENGTH_SHORT).show();
+                        showError("Không thể kết nối đến máy chủ!");
                     }
                 }
         );
 
         requestQueue.add(jsonObjectRequest);
-
-        editTextEmail.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                layoutEmail.setError(null);
-            }
-            @Override
-            public void afterTextChanged(Editable s) {}
-        });
-
-        editTextPassword.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                layoutPassword.setError(null);
-            }
-            @Override
-            public void afterTextChanged(Editable s) {}
-        });
-
     }
 
+    private void showError(String message) {
+        errorMessage.setText(message);
+        errorBlock.setVisibility(View.VISIBLE);
+        //errorBlock.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_slide_in));
+    }
 }

@@ -26,6 +26,7 @@ int anim design_bottom_sheet_slide_in 0x7f010018
 int anim design_bottom_sheet_slide_out 0x7f010019
 int anim design_snackbar_in 0x7f01001a
 int anim design_snackbar_out 0x7f01001b
+int anim fade_slide_in 0x7f01002e
 int anim fragment_fast_out_extra_slow_in 0x7f01001c
 int anim linear_indeterminate_line1_head_interpolator 0x7f01001d
 int anim linear_indeterminate_line1_tail_interpolator 0x7f01001e
@@ -3026,6 +3027,7 @@ int drawable abc_textfield_search_material 0x7f080076
 int drawable abc_vector_test 0x7f080077
 int drawable avd_hide_password 0x7f080078
 int drawable avd_show_password 0x7f080079
+int drawable bg_error 0x7f080105
 int drawable bg_gradient 0x7f0800f4
 int drawable bg_toast_success 0x7f080102
 int drawable btn_checkbox_checked_mtrl 0x7f08007a
@@ -3061,10 +3063,12 @@ int drawable ic_detail 0x7f0800fb
 int drawable ic_dob 0x7f080090
 int drawable ic_edit 0x7f080091
 int drawable ic_email 0x7f080092
+int drawable ic_error 0x7f080106
 int drawable ic_home 0x7f0800fc
 int drawable ic_keyboard_black_24dp 0x7f080093
 int drawable ic_launcher_background 0x7f080094
 int drawable ic_launcher_foreground 0x7f080095
+int drawable ic_list 0x7f080107
 int drawable ic_lock 0x7f080096
 int drawable ic_m3_chip_check 0x7f080097
 int drawable ic_m3_chip_checked_circle 0x7f080098
@@ -3426,6 +3430,8 @@ int id end 0x7f0a00bd
 int id endToStart 0x7f0a00be
 int id enterAlways 0x7f0a00bf
 int id enterAlwaysCollapsed 0x7f0a00c0
+int id errorBlock 0x7f0a0241
+int id errorMessage 0x7f0a0242
 int id escape 0x7f0a00c1
 int id exitUntilCollapsed 0x7f0a00c2
 int id expand_activities_button 0x7f0a00c3

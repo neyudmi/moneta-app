@@ -22,11 +22,44 @@
             android:contentDescription="Vertical Stack Logo"
             android:src="@drawable/logo" />
 
+        <LinearLayout
+            android:id="@+id/errorBlock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:padding="12dp"
+            android:backgroundTint="#FEE2E2"
+            android:background="@drawable/bg_error"
+            android:visibility="gone"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/logo_vertic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_error"
+                app:tint="#EF4444" />
+
+            <TextView
+                android:id="@+id/errorMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sai email hoặc mật khẩu"
+                android:textColor="#EF4444"
+                android:textSize="14sp"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/inter_18pt_bold" />
+        </LinearLayout>
+
+
         <!-- Email -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:hint="Email"
             android:id="@+id/layoutEmail"
             app:boxBackgroundMode="outline"
@@ -137,5 +170,7 @@
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackground" />
         </LinearLayout>
+
+
     </LinearLayout>
 </ScrollView>
