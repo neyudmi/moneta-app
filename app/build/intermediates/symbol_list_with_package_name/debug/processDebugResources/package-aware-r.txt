@@ -3058,7 +3058,6 @@ drawable ic_check
 drawable ic_checklist
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
-drawable ic_close
 drawable ic_detail
 drawable ic_dob
 drawable ic_edit
@@ -5459,3 +5458,4 @@ styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration ifTagNotSet ifTagSet motionInterpolator motionTarget onStateTransition pathMotionArc setsTag transitionDisable upDuration viewTransitionMode
 styleable include constraintSet
+xml network_security_config
