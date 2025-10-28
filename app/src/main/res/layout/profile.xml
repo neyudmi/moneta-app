@@ -9,15 +9,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:paddingTop="20dp">
+        android:background="@color/white">
 
         <TextView
             android:id="@+id/tvProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="24dp"
-            android:paddingVertical="16dp"
+            android:paddingVertical="10dp"
             android:text="Cài đặt"
             android:fontFamily="@font/inter_24pt_bold"
             android:textSize="18sp"
@@ -31,7 +30,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="24dp"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="10dp"
             android:gravity="top|center_horizontal"
             android:background="#FFFFFF">
 
@@ -146,16 +146,17 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
+                style="@style/Widget.Material3.Button.OutlinedButton"
                 android:id="@+id/btnChangePass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="24dp"
                 android:fontFamily="@font/inter_18pt_semibold"
                 android:text="LƯU THAY ĐỔI"
                 android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                app:backgroundTint="@color/mainOrange"
-                app:cornerRadius="12dp" />
+                android:textColor="@color/red"
+                app:cornerRadius="12dp"
+                app:strokeColor="@color/red"/>
 
             <com.google.android.material.button.MaterialButton
                 style="@style/Widget.Material3.Button.OutlinedButton"
@@ -179,11 +180,11 @@
                 android:text="ĐĂNG XUẤT"
                 android:textAllCaps="false"
                 android:layout_marginTop="12dp"
-                android:textColor="@color/red"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/mainOrange"
                 android:fontFamily="@font/inter_18pt_semibold"
                 app:cornerRadius="12dp"
-                app:iconPadding="8dp"
-                app:strokeColor="@color/red"/>
+                app:iconPadding="8dp" />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -50,7 +50,7 @@ public class HomeActivity extends AppCompatActivity {
                 // Add your NotificationFragment here
                 // selectedFragment = new NotificationFragment();
             } else if (idNav == R.id.nav_settings) {
-               // selectedFragment = new Profile();
+                selectedFragment = new Profile();
             } else {
                 return false; // prevent crash or unhandled selection (like the FAB placeholder)
             }
