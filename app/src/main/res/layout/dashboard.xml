@@ -26,11 +26,11 @@
             />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/ivProfile"
+            android:id="@+id/ivNoti"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_profile"
+            android:src="@drawable/ic_notify"
             android:layout_marginEnd="24dp"
             android:elevation="4dp"
             app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
@@ -46,13 +46,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="24dp"
-            android:background="@color/grey5">
+            android:background="@color/white">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardExpense"
                 android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="140dp"
+                android:layout_weight="2.7"
+                android:layout_height="wrap_content"
                 app:cardElevation="1dp"
                 app:strokeWidth="0dp"
                 app:cardBackgroundColor="@android:color/transparent"
@@ -65,19 +65,18 @@
                     android:orientation="vertical"
                     android:background="@drawable/bg_gradient"
                     android:paddingLeft="15dp"
-                    android:paddingVertical="20dp">
+                    android:paddingVertical="15dp">
                     <ImageView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:src="@drawable/ic_wallet"
                         app:tint="@color/white"
-                        app:itemIconSize="50dp"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="5dp"
                         />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tổng chi tiêu tháng"
+                        android:text="Tổng số dư"
                         android:fontFamily="@font/inter_18pt_regular"
                         android:textSize="16sp"
                         android:textColor="#FFFFFF" />
@@ -86,18 +85,18 @@
                         android:id="@+id/sumSpend"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:fontFamily="@font/inter_18pt_semibold"
                         android:text="0 VNĐ"
                         android:textColor="#FFFFFF"
-                        android:textSize="16sp" /> <!-- White text for contrast -->
+                        android:textSize="18sp" /> <!-- White text for contrast -->
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardTarget"
                 android:layout_width="0dp"
-                android:layout_height="140dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_weight="2"
                 app:cardBackgroundColor="@android:color/transparent"
@@ -111,26 +110,26 @@
                     android:orientation="vertical"
                     android:background="@color/grey4"
                     android:paddingLeft="15dp"
-                    android:paddingVertical="20dp">
+                    android:paddingVertical="15dp">
                     <ImageView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:src="@drawable/ic_topic"
                         app:tint="@color/black"
-                        android:layout_marginBottom="10dp"/>
+                        android:layout_marginBottom="5dp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Quản lý"
                         android:fontFamily="@font/inter_18pt_regular"
-                        android:textSize="15sp"
+                        android:textSize="16sp"
                         android:textColor="@color/black" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:text="Danh Mục"
-                        android:textSize="16sp"
+                        android:textSize="18sp"
                         android:fontFamily="@font/inter_24pt_semibold"
                         android:textColor="@color/black" />
                 </LinearLayout>
@@ -147,7 +146,7 @@
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
             android:paddingHorizontal="24dp"
-            android:background="@color/white">
+            android:background="@drawable/rounded_top_corners">
 
             <LinearLayout
                 android:id="@+id/tabGroup"
@@ -235,16 +234,7 @@
         </LinearLayout>
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/transactionList"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@color/white"
-            app:layout_constraintTop_toBottomOf="@id/tabLayout"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:paddingHorizontal="24dp" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

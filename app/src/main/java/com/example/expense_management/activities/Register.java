@@ -23,6 +23,7 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
@@ -182,15 +183,35 @@ public class Register extends AppCompatActivity {
                 url,
                 requestBody,
                 response -> {
-                   showSuccessDialog();
+                    // 🟢 Khi đăng ký thành công → chuyển luôn sang màn hình nhập OTP
+                    try {
+                        String registeredEmail = response.optString("email", email);
+
+                        Intent intent = new Intent(Register.this, RegisterOTP.class);
+                        intent.putExtra("email", registeredEmail);
+                        startActivity(intent);
+                        finish(); // kết thúc màn đăng ký
+                    } catch (Exception ex) {
+                        Log.e("Signup", "Lỗi khi chuyển sang màn hình OTP", ex);
+                    }
                 },
                 error -> {
                     if (error.networkResponse != null && error.networkResponse.data != null) {
                         String responseBody = new String(error.networkResponse.data, StandardCharsets.UTF_8);
-                        Log.e("RegisterError", "Response: " + responseBody);
+                        Log.e("RegisterError", "Status: " + error.networkResponse.statusCode);
+                        Log.e("RegisterError", "Body: " + responseBody);
+                    } else {
+                        Log.e("RegisterError", "Unknown network error: " + error.toString());
                     }
                     Toast.makeText(this, "Lỗi khi đăng ký!", Toast.LENGTH_LONG).show();
                 });
+
+        request.setRetryPolicy(new DefaultRetryPolicy(
+                15000, // 15 giây
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+        ));
+
 
         requestQueue.add(request);
     }

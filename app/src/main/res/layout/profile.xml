@@ -184,7 +184,8 @@
                 android:backgroundTint="@color/mainOrange"
                 android:fontFamily="@font/inter_18pt_semibold"
                 app:cornerRadius="12dp"
-                app:iconPadding="8dp" />
+                app:iconPadding="8dp"
+                app:strokeWidth="0dp"/>
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -121,10 +121,9 @@
             app:boxStrokeWidth="1dp"
             app:endIconMode="dropdown_menu"
             app:startIconDrawable="@drawable/ic_sex"
-            app:startIconTint="#000000"
-            app:startIconPadding="8dp">
+            app:startIconTint="#000000">
 
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            <AutoCompleteTextView
                 android:id="@+id/genderDropdown"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"

@@ -39,6 +39,7 @@ drawable ic_add
 drawable ic_ai
 drawable ic_analytics
 drawable ic_bell
+drawable ic_chart
 drawable ic_check
 drawable ic_checklist
 drawable ic_detail
@@ -51,6 +52,7 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_list
 drawable ic_lock
+drawable ic_menu
 drawable ic_notify
 drawable ic_otp
 drawable ic_phone
@@ -62,6 +64,7 @@ drawable ic_topic
 drawable ic_wallet
 drawable logo
 drawable nav_bottom
+drawable rounded_top_corners
 drawable slider1
 drawable slider2
 drawable slider3
@@ -152,20 +155,21 @@ id forgotloginHere
 id fragment_container
 id genderDropdown
 id genderLayout
-id ivProfile
+id ivNoti
 id layoutConfirmPassword
 id layoutDob
 id layoutEmail
 id layoutGender
 id layoutName
 id layoutPassword
+id layoutotp
 id loginHere
 id loginToRegister
 id logo_vertic
 id main
+id nav_chart
 id nav_home
-id nav_notification
-id nav_settings
+id nav_menu
 id nav_task
 id nextbtn
 id plotBtn
@@ -182,7 +186,6 @@ id startbtn
 id sumSpend
 id tabGroup
 id tabLayout
-id transactionList
 id tvOverview
 id tvProfile
 id tvResendOtp

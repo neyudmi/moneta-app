@@ -46,10 +46,10 @@ public class HomeActivity extends AppCompatActivity {
             } else if (idNav == R.id.nav_task) {
                 // Add your TaskFragment here when available
                 // selectedFragment = new TaskFragment();
-            } else if (idNav == R.id.nav_notification) {
+            } else if (idNav == R.id.nav_chart) {
                 // Add your NotificationFragment here
                 // selectedFragment = new NotificationFragment();
-            } else if (idNav == R.id.nav_settings) {
+            } else if (idNav == R.id.nav_menu) {
                 selectedFragment = new Profile();
             } else {
                 return false; // prevent crash or unhandled selection (like the FAB placeholder)

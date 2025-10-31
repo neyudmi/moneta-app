@@ -16,6 +16,10 @@
         android:usesCleartextTraffic="true"
         >
         <activity
+            android:name=".activities.RegisterOTP"
+            android:exported="false"/>
+
+        <activity
             android:name=".activities.HomeActivity"
             android:exported="false" />
         <activity

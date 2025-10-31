@@ -3056,6 +3056,7 @@ drawable ic_call_answer_video
 drawable ic_call_answer_video_low
 drawable ic_call_decline
 drawable ic_call_decline_low
+drawable ic_chart
 drawable ic_check
 drawable ic_checklist
 drawable ic_clear_black_24
@@ -3074,6 +3075,7 @@ drawable ic_lock
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
+drawable ic_menu
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
@@ -3163,6 +3165,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable rounded_top_corners
 drawable slider1
 drawable slider2
 drawable slider3
@@ -3489,7 +3492,7 @@ id invisible
 id inward
 id italic
 id item_touch_helper_previous_elevation
-id ivProfile
+id ivNoti
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -3500,6 +3503,7 @@ id layoutEmail
 id layoutGender
 id layoutName
 id layoutPassword
+id layoutotp
 id left
 id leftToRight
 id legacy
@@ -3572,9 +3576,9 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id nav_chart
 id nav_home
-id nav_notification
-id nav_settings
+id nav_menu
 id nav_task
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
@@ -3756,7 +3760,6 @@ id toggle
 id top
 id topPanel
 id touch_outside
-id transactionList
 id transitionToEnd
 id transitionToStart
 id transition_clip

@@ -30,6 +30,9 @@
         android:theme="@style/Theme.ExpenseManagement"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.example.expense_management.activities.RegisterOTP"
+            android:exported="false" />
+        <activity
             android:name="com.example.expense_management.activities.HomeActivity"
             android:exported="false" />
         <activity
